@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>AJOUCLUB - 아주대학교 동아리 정보</title>
+  <meta name="description" content="아주클럽은 아주대학교 동아리 정보 소개 페이지 입니다.">
+  <meta name="keywords" content="아주대, 동아리, 아주대동아리, 아주대 동아리, 아주대학교, 아주대 중앙 동아리, 아주대 중앙동아리, 중앙동아리">
+  <meta name="autor" content="nileforest">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="og:site_name" content="AJOUCLUB">
+  <meta name="og:title" content="AJOUCLUB - 아주대학교 동아리 정보">
+  <meta name="og:description" content="아주클럽은 아주대학교 동아리 정보 소개 페이지 입니다.">
+  <meta name="og:image" content="">
+  
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+<!-- Bootstrap css script -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<!-- Bootstrap css script -->
+
+</head>
+<body>
+<div class="wrapper">
+<!-- Basic Navbar --> 
+  <header id="header" class="header">
+    <div class="header-inner container">
+      <div class="logo">
+        <a href="">
+          <img class="logo" src="" alt="auclubinfo"></img>
+        </a>
+      </div>
+      <div class="nav-menu">
+        <ul class="nav-menu-inner">
+          <li>
+            <a href="#">관리자 로그인</a>
+          </li>
+          <li>
+            <a href="#">동아리등록</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+<!-- Basic Navbar End -->
+<section id="main-section">
+  <%= yield %>
+</section>
+  
+<!-- Basic Footer -->
+<footer id="footer">
+  <div class="container">
+    <div class="aulikelion-info">
+      <ul class="linkto-aulikelion">
+        <li id="footer-fb"></li>
+        <li id="footer-em"></li>
+      </ul>
+    </div>
+    <div class="copyright">
+      <p>
+        © 2018
+        <a target="_blank" href="https://www.facebook.com/aulikelion"/>AULIKELION</a>
+        . All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+<!-- Basic Footer End -->
+</div>
+
+<!-- Bootstrap js script -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<!-- Bootstrap js script End -->
+</body>
+</html>

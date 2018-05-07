@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  short_desc: MyText
+  detail_desc: MyText
+  meeting_date: MyText
+  contact: MyString
+  room_location: MyString
+  detail_desc: MyText
+  isApply: 1
+  category: one
+
+two:
+  name: MyString
+  short_desc: MyText
+  detail_desc: MyText
+  meeting_date: MyText
+  contact: MyString
+  room_location: MyString
+  detail_desc: MyText
+  isApply: 1
+  category: two

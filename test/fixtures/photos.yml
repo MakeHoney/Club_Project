@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  url: MyString
+  isMain: 1
+  desc: MyText
+  club: one
+
+two:
+  url: MyString
+  isMain: 1
+  desc: MyText
+  club: two

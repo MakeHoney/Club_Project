@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Clubs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Short desc</th>
+      <th>Detail desc</th>
+      <th>Meeting date</th>
+      <th>Contact</th>
+      <th>Room location</th>
+      <th>Detail desc</th>
+      <th>Isapply</th>
+      <th>Category</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clubs.each do |club| %>
+      <tr>
+        <td><%= club.name %></td>
+        <td><%= club.short_desc %></td>
+        <td><%= club.detail_desc %></td>
+        <td><%= club.meeting_date %></td>
+        <td><%= club.contact %></td>
+        <td><%= club.room_location %></td>
+        <td><%= club.detail_desc %></td>
+        <td><%= club.isApply %></td>
+        <td><%= club.category %></td>
+        <td><%= link_to 'Show', club %></td>
+        <td><%= link_to 'Edit', edit_club_path(club) %></td>
+        <td><%= link_to 'Destroy', club, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Club', new_club_path %>
