@@ -39,10 +39,12 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
+    bcrypt (3.1.11)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
     builder (3.2.3)
     byebug (10.0.2)
+    cancancan (2.2.0)
     carrierwave (1.2.2)
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
@@ -59,6 +61,12 @@ GEM
     concurrent-ruby (1.0.5)
     crass (1.0.4)
     debug_inspector (0.0.3)
+    devise (4.4.3)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 6.0)
+      responders
+      warden (~> 1.2.3)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
@@ -114,6 +122,7 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
+    orm_adapter (0.5.0)
     polyamorous (1.3.3)
       activerecord (>= 3.0)
     pr_geohash (1.0.0)
@@ -161,10 +170,14 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     rdoc (4.3.0)
+    responders (2.4.0)
+      actionpack (>= 4.2.0, < 5.3)
+      railties (>= 4.2.0, < 5.3)
     rest-client (2.0.2)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rolify (5.2.0)
     rsolr (2.2.0)
       builder (>= 2.1.2)
       faraday (>= 0.9.0)
@@ -218,6 +231,8 @@ GEM
       unf_ext
     unf_ext (0.0.7.5)
     unicode-display_width (1.3.2)
+    warden (1.2.7)
+      rack (>= 1.0)
     web-console (2.3.0)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -232,8 +247,10 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  cancancan
   carrierwave
   coffee-rails (~> 4.1.0)
+  devise
   font-awesome-rails
   hover-rails
   jbuilder (~> 2.0)
@@ -241,6 +258,7 @@ DEPENDENCIES
   rails (= 5.0.6)
   rails_db
   rest-client
+  rolify
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

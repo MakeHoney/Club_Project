@@ -29,6 +29,11 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 
+##로그인 & 권한부여 기능
+gem 'devise'
+gem 'cancancan'
+gem 'rolify'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
