@@ -111,5 +111,4 @@ class ClubsController < ApplicationController
     end
     return urls;
   end
-    
 end
