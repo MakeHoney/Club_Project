@@ -87,31 +87,28 @@ class ClubsController < ApplicationController
     def club_params
       params.require(:club).permit(:name, :short_desc, :detail_desc, :meeting_date, :contact, :room_location, :detail_desc, :isApply, :category_id, :applyMethod)
     end
-    
-    # 모집중이면서 메인 사진이 등록된 동아리의 메인 사진을 디비로부터 배열에 담아 반환해주는 메소드
+  end
 
+# 모집중이면서 메인 사진이 등록된 동아리의 메인 사진을 디비로부터 배열에 담아 반환해주는 메소드
 
-    
-end
-
-  def imageAdvertise
-    ids = Array.new();
-    urls = Array.new();
-    
-    sqlQuery = 'SELECT id FROM Clubs WHERE isApply = 1 OR isApply = 2';
-    db = Club.connection;
+def imageAdvertise
+  ids = Array.new();
+  urls = Array.new();
+  
+  sqlQuery = 'SELECT id FROM Clubs WHERE isApply = 1 OR isApply = 2';
+  db = Club.connection;
+  tuples = db.exec_query(sqlQuery);
+  tuples.each do |tuple|
+    ids << tuple['id'];
+  end
+  
+  ids.each do |applying_id|
+    sqlQuery = "SELECT url FROM Photos WHERE club_id = #{applying_id} AND isMain = 0";
+    db = Photo.connection;
     tuples = db.exec_query(sqlQuery);
     tuples.each do |tuple|
-      ids << tuple['id'];
+      urls << tuple['url'];
     end
-    
-    ids.each do |applying_id|
-      sqlQuery = "SELECT url FROM Photos WHERE club_id = #{applying_id} AND isMain = 0";
-      db = Photo.connection;
-      tuples = db.exec_query(sqlQuery);
-      tuples.each do |tuple|
-        urls << tuple['url'];
-      end
-    end
-    return urls;
   end
+  return urls;
+end
