@@ -30,14 +30,36 @@
         <td><%= club.detail_desc %></td>
         <td><%= club.isApply %></td>
         <td><%= club.category %></td>
-        <td><%= link_to 'Show', club %></td>
-        <td><%= link_to 'Edit', edit_club_path(club) %></td>
-        <td><%= link_to 'Destroy', club, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '상세페이지 보기', club %></td>
+        
+        <!--관리자이거나, 해당하는 동아리만 편집 할 수 있도록 설정-->
+        <!--아래코드 관리자 등록 후 주석 해제-->
+        <!--if current_user.has_role? :admin-->
+        
+        <td><%= link_to ' 동아리 편집하기', edit_club_path(club) %></td>
+        
+        <!--elsif user.author == 2 && current_user.id == club.id-->
+        <td><%= link_to ' 동아리 편집하기', edit_club_path(club) %></td>
+         <!--end -->
+        
+        <% if can? :destroy, @clubs %>
+        <td><%= link_to '삭제', club, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>    
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<!--관리자만 새글을 작성할 수 있도록 설정-->
+<% if can? :new, @clubs %>
 <%= link_to 'New Club', new_club_path %>
+<% end %>
+
+<% if user_signed_in? %>
+  <p>현재 로그인된 유저의 이메일 : <%= current_user.email %></p>
+  <p><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %></p>
+<% else %>
+  <p><%= link_to "로그인", new_user_session_path %></p>
+<% end %>
+

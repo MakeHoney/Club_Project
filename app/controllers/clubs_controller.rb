@@ -1,14 +1,16 @@
 class ClubsController < ApplicationController
+ #권한부여를 위해 코드 추가
+  load_and_authorize_resource
   before_action :set_club, only: [:show, :edit, :update, :destroy]
 
   # GET /clubs
   # GET /clubs.json
   def index
     @clubs = Club.all
-    
+    @users = User.all
     
     # 모집중이면서 메인 사진이 등록된 동아리의 메인 사진을 디비로부터 배열에 담아 반환해주는 메소드
-    # @imageUrls = imageAdvertise();
+    # @images = imageAdvertise();
   end
 
   # GET /clubs/1
@@ -78,25 +80,25 @@ class ClubsController < ApplicationController
 end
 
 # 모집중이면서 메인 사진이 등록된 동아리의 메인 사진을 디비로부터 배열에 담아 반환해주는 메소드
+
+def imageAdvertise
+  @buffer = Array.new();
+  @buffer2 = Array.new();
   
-  def imageAdvertise
-    ids = Array.new();
-    urls = Array.new();
-    
-    sqlQuery = 'SELECT id FROM Clubs WHERE isApply = 1 OR isApply = 2';
-    db = Club.connection;
-    tuples = db.exec_query(sqlQuery);
-    tuples.each do |tuple|
-      ids << tuple['id'];
-    end
-    
-    ids.each do |applying_id|
-      sqlQuery = "SELECT url FROM Photos WHERE club_id = #{applying_id} AND isMain = 0";
-      db = Photo.connection;
-      tuples = db.exec_query(sqlQuery);
-      tuples.each do |tuple|
-        urls << tuple['url'];
-      end
-    end
-    return urls;
+  sqlQuery = 'SELECT id FROM Clubs WHERE isApply = 1 AND isApply = 2';
+  db = Club.connection;
+  @tuples = db.exec_query(sqlQuery);
+  @tuples.each do |tuple|
+    @buffer << tuple['id'];
   end
+  
+  @buffer.each do |applying_id|
+    sqlQuery = "SELECT url FROM Photos WHERE club_id = #{elem} AND isMain = 0";
+    db = Photo.connection;
+    @tuples = db.exec_query(sqlQuery);
+    @tuples.each do |tuple|
+      @buffer2 << tuple['url'];
+    end
+    return @buffer2;
+  end
+end

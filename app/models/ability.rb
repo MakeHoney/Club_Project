@@ -2,6 +2,18 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    
+    #권한에 따른 게시글을 수정 할 수 있는 범위 설정
+    
+           user ||= User.new # guest user (not logged in)
+       
+       if user.has_role? :admin
+         can :manage, :all
+         
+       else
+         can [:index, :show, :edit, :update], Club
+         can [:destory], Club, user_id: user.id
+       end
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
