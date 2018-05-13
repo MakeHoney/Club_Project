@@ -10,7 +10,7 @@
   <meta name="og:site_name" content="AJOUCLUB">
   <meta name="og:title" content="AJOUCLUB - 아주대학교 동아리 정보">
   <meta name="og:description" content="아주클럽은 아주대학교 동아리 정보 소개 페이지 입니다.">
-  <meta name="og:image" content="">
+  <meta name="og:image" content="assets/logo_preview.png">
   
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -25,24 +25,28 @@
 <!-- Basic Navbar --> 
   <header id="header" class="header">
     <div class="header-inner container">
-      <div class="logo">
-        <a href="">
-          <img class="logo" src="" alt="auclubinfo"></img>
+      <div class="logo-container">
+        <a href="https://ajouclub-goonoksusu.c9users.io">
+          <img class="logo" src="assets/logo.png" alt="auclubinfo"></img>
         </a>
       </div>
       <div class="nav-menu">
         <ul class="nav-menu-inner">
           <li>
-            <a href="#">관리자 로그인</a>
+            <a class="hvr-underline-reveal" href="#">관리자 로그인</a>
           </li>
           <li>
-            <a href="#">동아리등록</a>
+            <a class="hvr-underline-reveal" href="#">동아리등록</a>
           </li>
           <li>
-            <a href="#">About</a>
+            <a class="hvr-underline-reveal" href="#about">About</a>
           </li>
         </ul>
       </div>
+      <div class="nav-menu-mobile">
+        <span></span>
+      </div>
+     
     </div>
   </header>
 <!-- Basic Navbar End -->
@@ -52,21 +56,28 @@
   
 <!-- Basic Footer -->
 <footer id="footer">
-  <div class="container">
     <div class="aulikelion-info">
       <ul class="linkto-aulikelion">
-        <li id="footer-fb"></li>
-        <li id="footer-em"></li>
+        <li id="footer-title">
+          <div class="footer-title-content">Contact Us</div>
+        </li>
+        <li id="footer-fb">
+          <a href="https://fb.com/aulikelion" target="_blank"><i class="fa fa-facebook hvr-buzz-out"></i></a>
+          <p>@aulikelion</p>
+        </li>
+        <li id="footer-em">
+          <a href="mailto:asdka4618@likelion.org" target="_blank"><i class="fa fa-envelope hvr-buzz-out"></i></a>
+          <p>asdka4618@likelion.org</p>
+        </li>
       </ul>
     </div>
     <div class="copyright">
       <p>
-        © 2018
-        <a target="_blank" href="https://www.facebook.com/aulikelion"/>AULIKELION</a>
-        . All Rights Reserved.
+        © 2018 
+        <a class="hvr-grow" target="_blank" href="https://www.facebook.com/aulikelion"/>AULIKELION.</a>
+         All Rights Reserved.
       </p>
     </div>
-  </div>
 </footer>
 <!-- Basic Footer End -->
 </div>

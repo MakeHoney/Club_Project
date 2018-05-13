@@ -15,17 +15,43 @@
 //= require turbolinks
 //= require_tree .
 
+$(buttonClicked());
 // Scroll reveal navbar
-/*global $*/
-$(document).ready(function() {
-    $(window).scroll(function() {
-    	var screansize = $(window).scrollTop()
-    	if (screansize > 150) {
-    		$("#header").addClass("header-fixed")
-    	} 
-    	else {
-    		$("#header").removeClass("header-fixed")
-    	}
+$(document).ready(function () {
+        fixedHeader();
+        new WOW().init();
+        buttonClicked();
     });
-});
+    
+$(window).scroll(function () {
+        fixedHeader();
+    });
+
+function fixedHeader() {
+        var scrolled = $(window).scrollTop();
+        if (scrolled > 150) {
+            $('#header').addClass('header-below');
+        } else {
+            $('#header').removeClass('header-below');
+        }
+        if (scrolled > 1) {
+            $('#header').addClass('header-fixed');
+        } else {
+            $('#header').removeClass('header-fixed');
+        }
+    };
 // Scroll reveal navbar End
+
+
+function buttonClicked(){
+    $(".nav-menu-mobile").click(function () {
+        if (!($(this).hasClass('active'))) {
+            $(".nav-menu-mobile").addClass('active');
+            $(".nav-menu").addClass('active');
+        }
+        else if ($(this).hasClass('active')) {
+            $(".nav-menu-mobile").removeClass('active');
+            $(".nav-menu").removeClass('active');
+        }
+    });
+};

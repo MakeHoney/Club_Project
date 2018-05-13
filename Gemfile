@@ -11,6 +11,11 @@ gem 'carrierwave'
 # 설치는 아직 안했습니다.
 gem 'sqlite3'
 
+# use Font-awesome for icon
+gem "font-awesome-rails"
+# hover.css
+gem 'hover-rails'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScsript assets
@@ -19,6 +24,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+
+#검색 기능
+gem 'sunspot_rails'
+gem 'sunspot_solr'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

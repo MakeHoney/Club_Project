@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   resources :clubs
+  root 'clubs#index'
+  
+  get '/clubs/show'=>'clubs#show'
+  get '/about' => "clubs#about"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

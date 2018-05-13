@@ -5,6 +5,10 @@ class ClubsController < ApplicationController
   # GET /clubs.json
   def index
     @clubs = Club.all
+    
+    
+    # 모집중이면서 메인 사진이 등록된 동아리의 메인 사진을 디비로부터 배열에 담아 반환해주는 메소드
+    # @imageUrls = imageAdvertise();
   end
 
   # GET /clubs/1
@@ -69,6 +73,30 @@ class ClubsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def club_params
-      params.require(:club).permit(:name, :short_desc, :detail_desc, :meeting_date, :contact, :room_location, :detail_desc, :isApply, :category_id)
+      params.require(:club).permit(:name, :short_desc, :detail_desc, :meeting_date, :contact, :room_location, :detail_desc, :isApply, :category_id, :applyMethod)
     end
 end
+
+# 모집중이면서 메인 사진이 등록된 동아리의 메인 사진을 디비로부터 배열에 담아 반환해주는 메소드
+  
+  def imageAdvertise
+    ids = Array.new();
+    urls = Array.new();
+    
+    sqlQuery = 'SELECT id FROM Clubs WHERE isApply = 1 OR isApply = 2';
+    db = Club.connection;
+    tuples = db.exec_query(sqlQuery);
+    tuples.each do |tuple|
+      ids << tuple['id'];
+    end
+    
+    ids.each do |applying_id|
+      sqlQuery = "SELECT url FROM Photos WHERE club_id = #{applying_id} AND isMain = 0";
+      db = Photo.connection;
+      tuples = db.exec_query(sqlQuery);
+      tuples.each do |tuple|
+        urls << tuple['url'];
+      end
+    end
+    return urls;
+  end
