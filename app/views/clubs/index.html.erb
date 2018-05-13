@@ -48,7 +48,44 @@
       </tr>
     <% end %>
   </tbody>
+  <%= form_tag search_clubs_path, :method => :get do %>
+<%= text_field_tag :query, params[:query] %> <%= submit_tag "검색" %>
+<% end %>
+
 </table>
+
+<div class="container">
+  <div id="demo" class="carousel slide" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1"></li>
+      <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+    
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="http://www.sciencemag.org/sites/default/files/styles/article_main_large/public/aistill-1280x720.jpg" alt="test1" width="1100" height="500">
+      </div>
+      <div class="carousel-item">
+        <img src="https://ssl.cdn.turner.com/money/dam/assets/180117164641-retirement-empty-half-piggy-bank-1280x720.jpg" alt="test2" width="1100" height="500">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.malwarebytes.com/images/wallpapers/desktop/1280x720/07.jpg" alt="test3" width="1100" height="500">
+      </div>
+    </div>
+    
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+</div>
 
 <br>
 <!--관리자만 새글을 작성할 수 있도록 설정-->
@@ -56,10 +93,4 @@
 <%= link_to 'New Club', new_club_path %>
 <% end %>
 
-<% if user_signed_in? %>
-  <p>현재 로그인된 유저의 이메일 : <%= current_user.email %></p>
-  <p><%= link_to "로그아웃", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?" } %></p>
-<% else %>
-  <p><%= link_to "로그인", new_user_session_path %></p>
-<% end %>
 

@@ -12,7 +12,17 @@ class ClubsController < ApplicationController
     # 모집중이면서 메인 사진이 등록된 동아리의 메인 사진을 디비로부터 배열에 담아 반환해주는 메소드
     # @images = imageAdvertise();
   end
-
+# search method
+  def search
+   @clubs = Club.search do
+    keywords params[:query]
+   end.results
+  
+    respond_to do |format|
+     format.html { render :action => "index" }
+     format.xml  { render :xml => @clubs }
+    end
+  end
   # GET /clubs/1
   # GET /clubs/1.json
   def show
@@ -77,7 +87,7 @@ class ClubsController < ApplicationController
     def club_params
       params.require(:club).permit(:name, :short_desc, :detail_desc, :meeting_date, :contact, :room_location, :detail_desc, :isApply, :category_id, :applyMethod)
     end
-end
+  end
 
 # 모집중이면서 메인 사진이 등록된 동아리의 메인 사진을 디비로부터 배열에 담아 반환해주는 메소드
 
