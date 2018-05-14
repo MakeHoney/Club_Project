@@ -5,13 +5,13 @@ Rails.application.routes.draw do
   get '/clubs/show'=>'clubs#show'
   get '/about' => "clubs#about"
   
-get 'clubs/search' => 'clubs#search'
+  get 'clubs/search' => 'clubs#search'
   resources :clubs do
-  collection do
-    get :search
+    collection do
+  get :search
   end
-end
- devise_for :users
+  end
+  devise_for :users
 
 end
   # The priority is based upon order of creation: first created -> highest priority.

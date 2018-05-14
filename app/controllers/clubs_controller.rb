@@ -10,13 +10,13 @@ class ClubsController < ApplicationController
     @users = User.all
     
     # 모집중이면서 메인 사진이 등록된 동아리의 메인 사진을 디비로부터 배열에 담아 반환해주는 메소드
-    # @images = imageAdvertise();
+    @imageUrls = imageAdvertise;
   end
 # search method
   def search
    @clubs = Club.search do
     keywords params[:query]
-   end.results
+  end.results
   
     respond_to do |format|
      format.html { render :action => "index" }
