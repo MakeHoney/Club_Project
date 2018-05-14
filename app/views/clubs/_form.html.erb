@@ -61,6 +61,15 @@
     <%= f.text_field :applyMethod %>
   </div>
 
+    <ul>
+      <%= f.fields_for :hashtags do |hashtag| %>
+        <li>
+          <%= hashtag.label :title, 'hashtag' %>
+          <%= hashtag.text_field :title %>
+        </li>
+      <% end %>
+    </ul>
+
   <div class="actions">
     <%= f.submit %>
   </div>

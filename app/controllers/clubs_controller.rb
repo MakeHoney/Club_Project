@@ -31,6 +31,7 @@ class ClubsController < ApplicationController
   # GET /clubs/new
   def new
     @club = Club.new
+    3.times { @club.hashtags.new }
   end
 
   # GET /clubs/1/edit
@@ -51,6 +52,14 @@ class ClubsController < ApplicationController
         format.json { render json: @club.errors, status: :unprocessable_entity }
       end
     end
+   
+  #  params[:hashtags_attributes][]["title"] #hash1
+  #  "hashtags_attributes" =>
+  #  {"0"=>{"title"=>"hash1"},
+  #   "1"=>{"title"=>"hash2"},
+  #   "2"=>{"title"=>"hash3"}}
+  #   }
+    
   end
 
   # PATCH/PUT /clubs/1
@@ -76,7 +85,11 @@ class ClubsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  
+  def hashtag_params
+    params.require(:club).permit(hashtags_attributes: [:title])
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_club

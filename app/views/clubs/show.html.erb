@@ -45,5 +45,12 @@
   <%= @club.category %>
 </p>
 
+<p>
+  <strong>Hashtags: </strong>
+  <%@club.hashtags.each do |h|%>
+    #<%=h.title%>
+    <%end%>
+</p>
+
 <%= link_to 'Edit', edit_club_path(@club) %> |
 <%= link_to 'Back', clubs_path %>

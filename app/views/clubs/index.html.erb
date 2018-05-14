@@ -46,9 +46,11 @@
       </tr>
     <% end %>
   </tbody>
+  <td>
   <%= form_tag search_clubs_path, :method => :get do %>
 <%= text_field_tag :query, params[:query] %> <%= submit_tag "검색" %>
 <% end %>
+</td>
 
 </table>
 
