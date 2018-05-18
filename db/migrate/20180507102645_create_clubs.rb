@@ -7,7 +7,6 @@ class CreateClubs < ActiveRecord::Migration[5.0]
       t.text :meeting_date
       t.string :contact
       t.string :room_location
-      t.text :detail_desc
       t.integer :isApply
       t.references :category, foreign_key: true
 

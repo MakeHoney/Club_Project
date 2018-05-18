@@ -10,47 +10,104 @@
   <%= @club.short_desc %>
 </p>
 
-<p>
+
+
+<div class="sec1">
+  <p>
   <strong>Detail desc:</strong>
   <%= @club.detail_desc %>
 </p>
 
-<p>
-  <strong>Meeting date:</strong>
-  <%= @club.meeting_date %>
-</p>
+</div>
+<!-- 화이팅하이소~~~~ -->
 
-<p>
-  <strong>Contact:</strong>
-  <%= @club.contact %>
-</p>
+<div class="sec1">
+<!--이미지 삽입-->
+  <img src="<%= @imageUrls %>">
 
-<p>
-  <strong>Room location:</strong>
-  <%= @club.room_location %>
-</p>
+</div>
+<div class="row justify-content-center" align="center">
+  <div class="card col-auto" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Meeting date</h5>
+      <p class="card-text"><%= @club.meeting_date %> </p>
+    </div>
+  </div>
+  
+  <div class="card col-auto" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Contact</h5>
+      <p class="card-text"><%= @club.contact %></p>
+    </div>
+  </div>
+  
+  <div class="card col-auto" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Room location</h5>
+      <p class="card-text"><%= @club.room_location%></p>
+    </div>
+  </div>
+  
+  <div class="card col-auto" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Isapply</h5>
+      <p class="card-text">
+        <% if @club.isApply==0 %>
+          Sorry:( This club is not being recruited.
+        <% elsif @club.isApply==1 %>
+          Yeah:) This club is now being recruited.
+        <% else %>
+          Yeah:) This club is always being recruited.
+        <% end %>
+      </p>
+      <% if @club.isApply != 1 %>
+        <a href="@club.applyMethod" class="card-link">Recruiting link</a>
+      <% end %>
+    </div>
+  </div>
+</div>
 
+<!--hashtag-->
 <p>
-  <strong>Detail desc:</strong>
-  <%= @club.detail_desc %>
+  <strong> hashtag : 
+    <% @club.hashtags.each do |tuple| %>
+      <%= tuple['hashtag'] %> &nbsp;
+    <% end %>
+  </strong>
 </p>
+<!--hashtag-->
 
-<p>
-  <strong>Isapply:</strong>
-  <%= @club.isApply %>
-</p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @club.category %>
-</p>
 
-<p>
-  <strong>Hashtags: </strong>
-  <%@club.hashtags.each do |h|%>
-    #<%=h.title%>
-    <%end%>
-</p>
+<!--<p>-->
+<!--  <strong>Meeting date:</strong>-->
+<!--  <%= @club.meeting_date %>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--  <strong>Contact:</strong>-->
+<!--  <%= @club.contact %>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--  <strong>Room location:</strong>-->
+<!--  <%= @club.room_location %>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--  <strong>Detail desc:</strong>-->
+<!--  <%= @club.detail_desc %>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--  <strong>Isapply:</strong>-->
+<!--  <%= @club.isApply %>-->
+<!--</p>-->
+
+<!--<p>-->
+<!--  <strong>Category</strong>-->
+<!--  <%= @category.name%>-->
+<!--</p>-->
 
 <%= link_to 'Edit', edit_club_path(@club) %> |
 <%= link_to 'Back', clubs_path %>

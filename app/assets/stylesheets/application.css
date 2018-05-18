@@ -14,9 +14,9 @@
  *= require_tree .
  *= require_self
  */
-
+ 
+ 
 @import "font-awesome";
-
 
 /* Font Justification */
 @font-face { 
@@ -308,6 +308,10 @@ a,p {
 
 /* Footer End */
 
+.card {
+    display: flex !important;
+    justify-content: center !important;
+}
 
 
 /* test */
@@ -316,3 +320,4 @@ a,p {
     background: rgba(0,0,0,0.5);
     overflow: hidden;
 }
+

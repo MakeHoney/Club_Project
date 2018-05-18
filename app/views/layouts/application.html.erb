@@ -15,6 +15,10 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  
+  <style>
+
+  </style>
 
 <!-- Bootstrap css script -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -34,13 +38,21 @@
       <div class="nav-menu">
         <ul class="nav-menu-inner">
           <li>
-            <a class="hvr-underline-reveal" href="/users/sign_in">관리자 로그인</a>
+            <!--navbar 상세페이지 동아리 이름-->
+          <% if user_signed_in? %>
+          <li><%=current_user.name%></li>
+          <li><%= link_to "로그아웃", destroy_user_session_path, method: :delete, :class => "hvr-underline-reveal" %></li>
+          <li><%= link_to '동아리편집', edit_club_path(current_user.id), :class => "hvr-underline-reveal" %></li>
+          <% else %>
+          <li><%= link_to "로그인", new_user_session_path, :class => "hvr-underline-reveal" %></li>
+          <li><%= link_to '동아리편집', clubs_path, :class => "hvr-underline-reveal" %></li>
+          <% end %>
+          <% if can? :new, @clubs %>  
+          <li><%= link_to '동아리등록', new_club_path, :class => "hvr-underline-reveal" %></li>
+          <% end %>
           </li>
           <li>
-            <a class="hvr-underline-reveal" href="clubs/new">동아리등록</a>
-          </li>
-          <li>
-            <a class="hvr-underline-reveal" href="#about">About</a>
+            <a class="hvr-underline-reveal" href="/about">About</a>
           </li>
         </ul>
       </div>
@@ -88,5 +100,31 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 <!-- Bootstrap js script End -->
+<!--Carousel ^^-->
+<script>
+$('#recipeCarousel').carousel({
+  interval: 3500
+})
+
+$('.carousel .carousel-item').each(function(){
+    var next = $(this).next();
+    if (!next.length) {
+    next = $(this).siblings(':first');
+    }
+    next.children(':first-child').clone().appendTo($(this));
+    
+    for (var i=0;i<5;i++) {
+        next=next.next();
+        if (!next.length) {
+        	next = $(this).siblings(':first');
+      	}
+        
+        next.children(':first-child').clone().appendTo($(this));
+      }
+});
+</script>
+<!-- Carousel End ^^-->
+
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
 </body>
 </html>

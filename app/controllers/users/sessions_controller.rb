@@ -1,7 +1,12 @@
 # frozen_string_literal: true
 
 class Users::SessionsController < Devise::SessionsController
-  # before_action :configure_sign_in_params, only: [:create]
+  # if Rails.env.production?  
+  #   Appname::Application.config.session_store :cookie_store, {:key => '_workspace_session', :domain => :all}  
+  # else  
+  #   Appname::Application.config.session_store :cookie_store, :key => '_workspace_session'   
+  # end
+  # before_action :configure_sign_in_params, :only => :none
 
   # GET /resource/sign_in
   # def new

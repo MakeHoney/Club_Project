@@ -12,8 +12,8 @@
 //
 //= require jquery3
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
+
 
 $(buttonClicked());
 // Scroll reveal navbar

@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 
+gem 'simple_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.6'
 # Use sqlite3 as the database for Active Record
@@ -8,7 +9,6 @@ gem 'rest-client'
 
 gem 'carrierwave'
 
-# 설치는 아직 안했습니다.
 gem 'sqlite3'
 
 # use Font-awesome for icon
@@ -26,8 +26,7 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 #검색 기능
-gem 'sunspot_rails'
-gem 'sunspot_solr'
+gem 'ransack'
 
 ##로그인 & 권한부여 기능
 gem 'devise'

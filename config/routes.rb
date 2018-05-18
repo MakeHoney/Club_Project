@@ -1,17 +1,23 @@
 Rails.application.routes.draw do
+ 
   resources :clubs
   root 'clubs#index'
   
   get '/clubs/show'=>'clubs#show'
-  get '/about' => "clubs#about"
-  
+  get '/about' => 'clubs#about'
+ 
   get 'clubs/search' => 'clubs#search'
   resources :clubs do
     collection do
   get :search
   end
   end
-  devise_for :users
+
+  
+  devise_for :users, controllers:{
+    sessions: "users/sessions",
+    registrations: "users/registrations"
+  }
 
 end
   # The priority is based upon order of creation: first created -> highest priority.

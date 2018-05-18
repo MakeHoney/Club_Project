@@ -1,3 +1,156 @@
-// Place all the styles related to the Clubs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+  display: flex;
+}
+
+.carousel-inner .carousel-item-right.active,
+.carousel-inner .carousel-item-next {
+  transform: translateX(25%);
+}
+
+.carousel-inner .carousel-item-left.active, 
+.carousel-inner .carousel-item-prev {
+  transform: translateX(-25%);
+}
+  
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left{ 
+  transform: translateX(0);
+}
+
+.p_button{
+  cursor: pointer;
+  border-radius: 25px;
+  color: #fff;
+  border: 1px solid #fff;
+  background-color: transparent;
+}
+
+.p_button:hover{
+  color: #000000;
+  background-color: #fff;
+  transition: 300ms ease all;
+}
+
+
+.container {
+    overflow: hidden;
+}
+
+.filterDiv {
+    float: left;
+    background-color: #2196F3;
+    color: #ffffff;
+    width: 130px;
+    line-height: 100px;
+    text-align: center;
+    margin: 2px;
+    display: none; /* Hidden by default */
+}
+
+.main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -51px;
+    margin-left: -153px;
+    background-color: yellow;
+    border: 1px solid red;
+    width: 306px;
+    height: 102px;
+}
+   
+.main_common{
+    display:inline-table;
+    float: left;
+    width: 100px;
+    height: 100px;
+    border: 1px solid blue;
+}
+ 
+.content {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+    display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Add a light grey background on mouse-over */
+.btn:hover {
+  background-color: #ddd;
+}
+
+/* Add a dark background to the active button */
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+.row{
+  margin: 4em 0 2em 0;
+}
+
+// 검색창 디자인
+
+.search{
+  display:flex;
+  justify-content: center;
+  align-item: center;
+}
+
+.club_search{
+  margin-bottom: 2em;
+}
+
+input[type='search']{
+  font-size: 16px;
+  width: 325px;
+  padding: 10px;
+  border: 0px;
+  outline: none;
+  float: left;
+  
+}
+
+.bu_search{
+  width: 80px;
+  height: 100%;
+  border: 0px;
+  background: #ffd738;
+  outline: none;
+  color: #ffffff;
+  float: right;
+}
+
+// 카테고리 분류 부분 시작
+
+.btn{
+  border: 1px solid black;
+  color: white;
+  background-color: transparent;
+  // padding: 28px 56px; 부트스트랩때문에 적용안됨
+  // font-size: 150%;부트스트랩때문에 적용안됨
+  cursor: pointer;
+  // border-color: #ffd738;부트스트랩때문에 적용안됨
+}
+
+#myBtnContainer{
+  display:flex;
+  justify-content: center;
+  align-item: center;
+}
+
+
