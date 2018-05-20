@@ -47,6 +47,7 @@
           <li><%= link_to "로그인", new_user_session_path, :class => "hvr-underline-reveal" %></li>
           <li><%= link_to '동아리편집', clubs_path, :class => "hvr-underline-reveal" %></li>
           <% end %>
+          
           <% if can? :new, @clubs %>  
           <li><%= link_to '동아리등록', new_club_path, :class => "hvr-underline-reveal" %></li>
           <% end %>

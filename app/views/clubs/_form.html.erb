@@ -2,7 +2,7 @@
   <% if club.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(club.errors.count, "error") %> prohibited this club from being saved:</h2>
-
+    
       <ul>
       <% club.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -59,6 +59,13 @@
   <div class="field">
     <%= f.label :applyMethod %>
     <%= f.text_field :applyMethod %>
+  </div>
+  
+  <div class="field">
+    <input type="file" name="image"><br>
+    <%= f.label :picture %><br>
+    <%= f.file_field :picture, as: :file %>
+    <%= f.hidden_field :picture_cache %>
   </div>
 
     <ul>

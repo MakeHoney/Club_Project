@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
  
-  resources :clubs
+  get 'hashtags/show'
+  resources :hashtags
+  resources :clubs  
   root 'clubs#index'
   
   get '/clubs/show'=>'clubs#show'

@@ -1,7 +1,7 @@
 class ClubsController < ApplicationController
  #권한부여를 위해 코드 추가
   # load_and_authorize_resource
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :about]
   before_action :set_club, only: [:show, :edit, :update, :destroy]
 
   # GET /clubs
@@ -17,17 +17,20 @@ class ClubsController < ApplicationController
     
     @q = Club.ransack(params[:q])
     @clubs = @q.result(distinct: true)
-   
-   
-   # < ----- for hashtag ----- > 
-    @hashtags = Hashtag.all
-    hashIds = Hashtag.ids;
-    hashIds.shuffle!;
+    
+   # < ----------------- hash tag start ----------------- >
+    hashtags = Hashtag.all
+    @hashIds = hashtags.ids;
+    @hashIds.shuffle!;
+    @hashIds = @hashIds.slice(0..4)
+
     @randHashtags = Array.new();
-    5.times do |i|
-      @randHashtags << @hashtags.where(id: hashIds[i])[0]['hashtag'];
+    @hashIds.length.times do |i|
+      @randHashtags << hashtags.where(id: @hashIds[i])[0]['hashtag'];
     end
-   # < ----- for hashtag ----- > 
+    
+   # < ----------------- hash tag end ----------------- >
+    
   end
 # search method
  
@@ -35,8 +38,6 @@ class ClubsController < ApplicationController
   # GET /clubs/1.json
   def show
     @category = Category.find(@club.category_id)
-    @imageUrls = imageAdvertise('urls');
-
   end
 
   # GET /clubs/new
@@ -47,7 +48,7 @@ class ClubsController < ApplicationController
 
   # GET /clubs/1/edit
   def edit
-   # < ----- for hashtag ----- > 
+   # < ----------------- hash tag start ----------------- >
     @existHashtags = Array.new()
     @hashtagString = '';
     Club.find(@club['id']).hashtags.each_with_index do |tuple, i|
@@ -59,10 +60,7 @@ class ClubsController < ApplicationController
       end
     end
     @numOfHashTag = @existHashtags.length;
-   # < ----- for hashtag ----- > 
-  end
-  
-  def about
+   # < ----------------- hash tag end ----------------- >
   end
 
   # POST /clubs
@@ -80,8 +78,7 @@ class ClubsController < ApplicationController
         format.json { render json: @club.errors, status: :unprocessable_entity }
       end
     end
-    
-    # < ----------------- hash tag start ----------------- >
+   # < ----------------- hash tag start ----------------- >
 
     # new.html.erb로부터 전달받은 해시태그 스트링을 파싱하여 해시태그 테이블에 넣는다.
     # Hashtag = ApplicationRecord::Hashtag
@@ -105,8 +102,6 @@ class ClubsController < ApplicationController
     end
 
     # < ----------------- hash tag end ----------------- >
-
-   
     
   end  
 
@@ -182,14 +177,12 @@ class ClubsController < ApplicationController
     Hashtag.where.not(id: joinTableHashIdx).destroy_all;
     # < ----------------- hash tag end ----------------- >
     
-    
     @club.destroy
     respond_to do |format|
       format.html { redirect_to clubs_url, notice: 'Club was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
-  
   
   
   private

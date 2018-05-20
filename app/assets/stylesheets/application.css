@@ -134,7 +134,7 @@ a,p {
     text-align: center;
     top: 0px;
     z-index: 1000;
-    background-color: rgba(0,0,0, 0);
+    background-color:#072E5D;
     color: #fff;
     width: 100%;
     transition: all .3s;
@@ -145,7 +145,7 @@ a,p {
     margin-top: 0 !important;
 }
 .header.header-below{
-    background-color: rgba(0,0,0, 0.65);
+    background-color: #072E5D;
     transition: all .3s;
 	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 }
@@ -245,7 +245,7 @@ a,p {
 
 /* Footer */
 #footer{
-    background-color: #494343;
+    background-color: #072E5D;
     flex-shrink: 0;
 }
 .copyright{
@@ -317,7 +317,90 @@ a,p {
 /* test */
 /*임시용*/
 #main-section{
-    background: rgba(0,0,0,0.5);
+    background: #f3f3f0;
     overflow: hidden;
 }
+
+/*로그인 화면*/
+.simple_form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.string{
+    width: 30em;
+    height: 4em;
+    margin-bottom: 1rem;
+
+}
+
+.password.optional{
+    width: 30em;
+    height: 4em;
+}
+.user_remember_me{
+    margin-top: 1em;
+}
+.boolean.optional{
+    margin-right: .5em;
+}
+#new_user{
+    margin-top: 10em;
+}
+
+.lo_login{
+    font-size: 3em;
+    margin-bottom: .5em;
+    position: relative;
+    text-align: center;
+    font-family:'Spoqa Han Sans', sans-serif;
+    color: rgba(7, 46, 93, .9);
+    
+}
+.bu_login{
+    width: 30em;
+    height: 4em;
+    margin-bottom: 1em;
+   
+}
+
+.btn.btn-primary{
+    background-color: rgba(255, 193, 14, .9);
+    border-color: rgba(255, 193, 14, .9);
+}
+
+
+.btn.btn-primary:visited{
+    background-color: rgba(255, 193, 14, .7);
+    border-color: rgba(255, 193, 14, .7);
+}
+
+.btn.btn-primary:hover{
+    background-color: rgba(255, 193, 14, .7);
+    border-color: rgba(255, 193, 14, .7);
+}
+.btn.btn-primary:active{
+    background-color: rgba(255, 193, 14, .7);
+    border-color: rgba(255, 193, 14, .7);
+}
+
+.log_pas{
+   border-bottom: 1px solid rgba(255, 193, 14, .7);
+   padding-bottom: .3em;
+}
+.log_pas:link {
+  color: #072E5D;
+}
+.log_pas:visited {
+  color: #072E5D;
+}
+.log_pas:hover {
+  color: #CCCCCC;
+}
+.log_pas:active {
+  color: #072E5D;
+}
+
 

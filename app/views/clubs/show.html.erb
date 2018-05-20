@@ -71,7 +71,7 @@
 <p>
   <strong> hashtag : 
     <% @club.hashtags.each do |tuple| %>
-      <%= tuple['hashtag'] %> &nbsp;
+      <%= link_to tuple['hashtag'], hashtag_path(:id => tuple['id']) %>   &nbsp;
     <% end %>
   </strong>
 </p>
@@ -109,5 +109,11 @@
 <!--  <%= @category.name%>-->
 <!--</p>-->
 
-<%= link_to 'Edit', edit_club_path(@club) %> |
-<%= link_to 'Back', clubs_path %>
+<!--관리자이거나, 해당하는 동아리만 편집 할 수 있도록 설정-->
+
+<% if user_signed_in? && current_user.author == 1%>
+<p><%= link_to ' 동아리 편집하기', edit_club_path(@club) %></p>
+<% elsif user_signed_in? && current_user.author == 2 && current_user.id == @club.id %>
+<p><%= link_to ' 내 동아리 편집하기', edit_club_path(@club) %></p>
+<% end %>
+<p><%= link_to '돌아가기', clubs_path %></p>
