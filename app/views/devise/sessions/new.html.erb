@@ -5,7 +5,7 @@
   <div class="lo_login">    Welcome</img></div>
   <!--<img class="logo" src="/assets/logo.png" alt="auclubinfo">-->
   <div>
-        <div><%= f.input :email, required: false, autofocus: true, label: false, placeholder: "  User eamil" %>
+        <div><%= f.input :email, required: false, autofocus: true, label: false, placeholder: "  User email" %>
              <%= f.input :password, required: false, label: false, placeholder: "  Password"%>
         </div>
         <div><label><%= f.input :remember_me, :class => "hvr-underline-reveal", as: :boolean if devise_mapping.rememberable? %></label></div>

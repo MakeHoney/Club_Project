@@ -7,11 +7,69 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Category.create([{name: "연행예술"}, {name:"학술언론"},{name:"레져스포츠"},{name:"체육"},{name:"과학기술"},{name:"사회활동종교"},{name:"창작전시"}]);
 
-admin_user1 = User.create( email: "sangah@naver.com" , name: "동아리1", club_id: 1, author: 2, password: "asdfgh" )
-user = User.find(1)
- 
-admin_user2 = User.create( email: "parksangah1@naver.com" , name: "관리자1" , author: 1, password: "asdfgh" )
-user = User.find(2)
+User.create( [
+    {email: "sangah@naver.com" , name: "동아리1", club_id: 1, author: 2, password: "asdfgh"},
+    {email: "sangah2@naver.com" , name: "동아리2", club_id: 2, author: 2, password: "asdfgh"},
+    {email: "sangah3@naver.com" , name: "동아리3", club_id: 3, author: 2, password: "asdfgh"},
+    {email: "sangah4@naver.com" , name: "동아리4", club_id: 4, author: 2, password: "asdfgh"},
+    {email: "sangah5@naver.com" , name: "동아리5", club_id: 5, author: 2, password: "asdfgh"},
+    {email: "sangah6@naver.com" , name: "동아리6", club_id: 6, author: 2, password: "asdfgh"},
+    {email: "sangah7@naver.com" , name: "동아리7", club_id: 7, author: 2, password: "asdfgh"},
+    {email: "sangah8@naver.com" , name: "동아리8", club_id: 8, author: 2, password: "asdfgh"},
+    {email: "sangah9@naver.com" , name: "동아리9", club_id: 9, author: 2, password: "asdfgh"},
+    {email: "sangah10@naver.com" , name: "동아리10", club_id: 10, author: 2, password: "asdfgh"},
+    {email: "sangah11@naver.com" , name: "동아리11", club_id: 11, author: 2, password: "asdfgh"},
+    {email: "sangah12@naver.com" , name: "동아리12", club_id: 12, author: 2, password: "asdfgh"},
+    {email: "sangah13@naver.com" , name: "동아리13", club_id: 13, author: 2, password: "asdfgh"},
+    {email: "sangah14@naver.com" , name: "동아리14", club_id: 14, author: 2, password: "asdfgh"},
+    {email: "sangah15@naver.com" , name: "동아리15", club_id: 15, author: 2, password: "asdfgh"},
+    {email: "sangah16@naver.com" , name: "동아리16", club_id: 16, author: 2, password: "asdfgh"},
+    {email: "sangah17@naver.com" , name: "동아리17", club_id: 17, author: 2, password: "asdfgh"},
+    {email: "sangah18@naver.com" , name: "동아리18", club_id: 18, author: 2, password: "asdfgh"},
+    {email: "sangah19@naver.com" , name: "동아리19", club_id: 19, author: 2, password: "asdfgh"},
+    {email: "sangah20@naver.com" , name: "동아리20", club_id: 20, author: 2, password: "asdfgh"},
+    {email: "sangah21@naver.com" , name: "동아리21", club_id: 21, author: 2, password: "asdfgh"},
+    {email: "sangah22@naver.com" , name: "동아리22", club_id: 22, author: 2, password: "asdfgh"},
+    {email: "sangah23@naver.com" , name: "동아리23", club_id: 23, author: 2, password: "asdfgh"},
+    {email: "sangah24@naver.com" , name: "동아리24", club_id: 24, author: 2, password: "asdfgh"},
+    {email: "sangah25@naver.com" , name: "동아리25", club_id: 25, author: 2, password: "asdfgh"},
+    {email: "sangah26@naver.com" , name: "동아리26", club_id: 26, author: 2, password: "asdfgh"},
+    {email: "sangah27@naver.com" , name: "동아리27", club_id: 27, author: 2, password: "asdfgh"},
+    {email: "sangah28@naver.com" , name: "동아리28", club_id: 28, author: 2, password: "asdfgh"},
+    {email: "sangah29@naver.com" , name: "동아리29", club_id: 29, author: 2, password: "asdfgh"},
+    {email: "sangah30@naver.com" , name: "동아리30", club_id: 30, author: 2, password: "asdfgh"},
+    {email: "sangah31@naver.com" , name: "동아리31", club_id: 31, author: 2, password: "asdfgh"},
+    {email: "sangah32@naver.com" , name: "동아리32", club_id: 32, author: 2, password: "asdfgh"},
+    {email: "sangah33@naver.com" , name: "동아리33", club_id: 33, author: 2, password: "asdfgh"},
+    {email: "sangah34@naver.com" , name: "동아리34", club_id: 34, author: 2, password: "asdfgh"},
+    {email: "sangah35@naver.com" , name: "동아리35", club_id: 35, author: 2, password: "asdfgh"},
+    {email: "sangah36@naver.com" , name: "동아리36", club_id: 36, author: 2, password: "asdfgh"},
+    {email: "sangah37@naver.com" , name: "동아리37", club_id: 37, author: 2, password: "asdfgh"},
+    {email: "sangah38@naver.com" , name: "동아리38", club_id: 38, author: 2, password: "asdfgh"},
+    {email: "sangah39@naver.com" , name: "동아리39", club_id: 39, author: 2, password: "asdfgh"},
+    {email: "sangah40@naver.com" , name: "동아리40", club_id: 40, author: 2, password: "asdfgh"},
+    {email: "sangah41@naver.com" , name: "동아리41", club_id: 41, author: 2, password: "asdfgh"},
+    {email: "sangah42@naver.com" , name: "동아리42", club_id: 42, author: 2, password: "asdfgh"},
+    {email: "sangah43@naver.com" , name: "동아리43", club_id: 43, author: 2, password: "asdfgh"},
+    {email: "sangah44@naver.com" , name: "동아리44", club_id: 44, author: 2, password: "asdfgh"},
+    {email: "sangah45@naver.com" , name: "동아리45", club_id: 45, author: 2, password: "asdfgh"},
+    {email: "sangah46@naver.com" , name: "동아리46", club_id: 46, author: 2, password: "asdfgh"},
+    {email: "sangah47@naver.com" , name: "동아리47", club_id: 47, author: 2, password: "asdfgh"},
+    {email: "sangah48@naver.com" , name: "동아리48", club_id: 48, author: 2, password: "asdfgh"},
+    {email: "sangah49@naver.com" , name: "동아리49", club_id: 49, author: 2, password: "asdfgh"},
+    {email: "sangah50@naver.com" , name: "동아리50", club_id: 50, author: 2, password: "asdfgh"},
+    {email: "sangah51@naver.com" , name: "동아리51", club_id: 51, author: 2, password: "asdfgh"},
+    {email: "sangah52@naver.com" , name: "동아리52", club_id: 52, author: 2, password: "asdfgh"},
+    {email: "sangah53@naver.com" , name: "동아리53", club_id: 53, author: 2, password: "asdfgh"},
+    {email: "sangah54@naver.com" , name: "동아리54", club_id: 54, author: 2, password: "asdfgh"},
+    {email: "sangah55@naver.com" , name: "동아리55", club_id: 55, author: 2, password: "asdfgh"},
+    {email: "sangah56@naver.com" , name: "동아리56", club_id: 56, author: 2, password: "asdfgh"},
+    {email: "sangah57@naver.com" , name: "동아리57", club_id: 57, author: 2, password: "asdfgh"},
+    {email: "sangah58@naver.com" , name: "동아리58", club_id: 58, author: 2, password: "asdfgh"}
+    ])
+
+admin_user1 = User.create( email: "parksangah1@naver.com" , name: "관리자1" , author: 1, password: "asdfgh" )
+user = User.find(59)
 user.add_role :admin
 
 
@@ -569,7 +627,7 @@ Club.create([
     ]);
 Photo.create([
         {
-            url: "http://www.visualdive.com/wp-content/uploads/2017/12/5-4.jpg",
+            url: "",
             isMain: 0,
             club_id: 1
         },

@@ -10,21 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180519111823) do
+ActiveRecord::Schema.define(version: 20180521105101) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "category_clubs", force: :cascade do |t|
-    t.integer  "club_id"
-    t.integer  "category_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["category_id"], name: "index_category_clubs_on_category_id"
-    t.index ["club_id"], name: "index_category_clubs_on_club_id"
   end
 
   create_table "clubs", force: :cascade do |t|
@@ -39,7 +30,7 @@ ActiveRecord::Schema.define(version: 20180519111823) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "applyMethod"
-    t.string   "image"
+    t.string   "image_url"
     t.index ["category_id"], name: "index_clubs_on_category_id"
   end
 

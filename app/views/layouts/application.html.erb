@@ -23,6 +23,8 @@
 <!-- Bootstrap css script -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 <!-- Bootstrap css script -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+<!--fontawesome-->
 
 </head>
 <body>
@@ -35,6 +37,12 @@
           <img class="logo" src="/assets/logo.png" alt="auclubinfo"></img>
         </a>
       </div>
+      <div>
+        <% if @club != nil %>
+          <li class="club-name"><%= @club.name %></li>
+          <li class="club-short_desc"><%= @club.short_desc %></li>
+        <% end %>
+      </div>
       <div class="nav-menu">
         <ul class="nav-menu-inner">
           <li>
@@ -42,13 +50,16 @@
           <% if user_signed_in? %>
           <li><%=current_user.name%></li>
           <li><%= link_to "로그아웃", destroy_user_session_path, method: :delete, :class => "hvr-underline-reveal" %></li>
+          <% if current_user.id < 59 %>
           <li><%= link_to '동아리편집', edit_club_path(current_user.id), :class => "hvr-underline-reveal" %></li>
+          <% end %>
           <% else %>
           <li><%= link_to "로그인", new_user_session_path, :class => "hvr-underline-reveal" %></li>
           <li><%= link_to '동아리편집', clubs_path, :class => "hvr-underline-reveal" %></li>
           <% end %>
           
           <% if can? :new, @clubs %>  
+          <li><%= link_to '동아리편집', clubs_path, :class => "hvr-underline-reveal" %></li>
           <li><%= link_to '동아리등록', new_club_path, :class => "hvr-underline-reveal" %></li>
           <% end %>
           </li>
@@ -76,7 +87,7 @@
           <div class="footer-title-content">Contact Us</div>
         </li>
         <li id="footer-fb">
-          <a href="https://fb.com/aulikelion" target="_blank"><i class="fa fa-facebook hvr-buzz-out"></i></a>
+          <a class="facebook_icon" href="https://fb.com/aulikelion" target="_blank"><i class="fab fa-facebook-f hvr-buzz-out" style="color: white;"></i></a>
           <p>@aulikelion</p>
         </li>
         <li id="footer-em">

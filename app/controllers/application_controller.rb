@@ -26,6 +26,7 @@ class ApplicationController < ActionController::Base
   end
 
  def index
+   @club = Club.find(params[:id])
   @clubs = Club.all
   @users = User.all
  end

@@ -61,12 +61,7 @@
     <%= f.text_field :applyMethod %>
   </div>
   
-  <div class="field">
-    <input type="file" name="image"><br>
-    <%= f.label :picture %><br>
-    <%= f.file_field :picture, as: :file %>
-    <%= f.hidden_field :picture_cache %>
-  </div>
+    <%= f.file_field :image_url %><br />
 
     <ul>
       <%= f.fields_for :hashtags do |hashtag| %>

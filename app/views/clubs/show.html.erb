@@ -1,31 +1,35 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>-->
 
-<p>
-  <strong>Name:</strong>
-  <%= @club.name %>
-</p>
+<!--<p>-->
+<!--  <strong>Name:</strong>-->
+<!--  <%= @club.name %>-->
+<!--</p>-->
 
-<p>
-  <strong>Short desc:</strong>
-  <%= @club.short_desc %>
-</p>
+<!--<p>-->
+<!--  <strong>Short desc:</strong>-->
+<!--  <%= @club.short_desc %>-->
+<!--</p>-->
 
+  
 
+  <div class="sec1">
+  <!--이미지 삽입-->
+    <% @photo.each do |photo|%>
+      <center class="sec1-img"><img src="<%= photo.url %>" width="500"/></center>
+    <% end %>
+  <!--자리 잡아놓기 위해서 임의의 이미지 삽입했습니다-->
+    <!--<center class="sec1-img"><img src="http://www.visualdive.com/wp-content/uploads/2017/12/5-4.jpg" width="500"></center>-->
+   
+    <p class="sec1-detail_desc">
+    <strong>Detail desc:</strong>
+    <%= @club.detail_desc %>
+    </p>
 
-<div class="sec1">
-  <p>
-  <strong>Detail desc:</strong>
-  <%= @club.detail_desc %>
-</p>
+  </div>
+  
+ <%=image_tag(@club.image_url)%>
 
-</div>
 <!-- 화이팅하이소~~~~ -->
-
-<div class="sec1">
-<!--이미지 삽입-->
-  <img src="<%= @imageUrls %>">
-
-</div>
 <div class="row justify-content-center" align="center">
   <div class="card col-auto" style="width: 18rem;">
     <div class="card-body">
@@ -68,7 +72,7 @@
 </div>
 
 <!--hashtag-->
-<p>
+<p align="center">
   <strong> hashtag : 
     <% @club.hashtags.each do |tuple| %>
       <%= link_to tuple['hashtag'], hashtag_path(:id => tuple['id']) %>   &nbsp;
@@ -116,4 +120,4 @@
 <% elsif user_signed_in? && current_user.author == 2 && current_user.id == @club.id %>
 <p><%= link_to ' 내 동아리 편집하기', edit_club_path(@club) %></p>
 <% end %>
-<p><%= link_to '돌아가기', clubs_path %></p>
+<p class="back-to-main" align="right"><%= link_to '돌아가기', clubs_path %></p>

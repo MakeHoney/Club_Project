@@ -149,6 +149,8 @@ function assignId(nextIdNumber, btnId){
     <%= f.text_field :applyMethod %>
   </div>
 
+    <%= f.file_field :image_url %><br />
+  
     <ul>
       <%= f.fields_for :hashtags do |hashtag| %>
         <li>

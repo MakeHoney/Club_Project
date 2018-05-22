@@ -103,13 +103,11 @@
 
 
 
-
-
 <!--검색 기능 창-->
 <div class="search"> 
         <%= search_form_for @q  do | f | %>
         <%= f.search_field :name_cont_any  ,placeholder: '동아리 이름을 입력해주세요!!' %>
-        <%=f.submit :class => 'bu_search'%> 
+        <%=f.submit :class => 'bu_search' %> 
         <%end%>
  <!--hashtag-->
 </div>
@@ -177,34 +175,34 @@
 
 <!-- Category -->
 <!-- Control buttons -->
-<div id="myBtnContainer">
-  <!--<button class="btn active" onclick="filterSelection('all')"> Show all</button>-->
-  <button class="btn" onclick="filterSelection('art')" style="padding: 28px 30px; font-size: 150%; border-color: #ffd738;" > 연행예술</button>
-  <button class="btn" onclick="filterSelection('study')" style="padding: 28px 30px; font-size: 150%; border-color: #ffd738;">학술언론</button>
-  <button class="btn" onclick="filterSelection('sports')" style="padding: 28px 30px; font-size: 150%; border-color: #ffd738;">레져스포츠</button>
-  <button class="btn" onclick="filterSelection('exercise')" style="padding: 28px 30px; font-size: 150%; border-color: #ffd738;">체육</button>
-  <button class="btn" onclick="filterSelection('science')" style="padding: 28px 30px; font-size: 150%; border-color: #ffd738;">과학기술</button>
-  <button class="btn" onclick="filterSelection('social')" style="padding: 28px 30px; font-size: 150%; border-color: #ffd738;">사회활동종교</button>
-  <button class="btn" onclick="filterSelection('creative')" style="padding: 28px 30px; font-size: 150%; border-color: #ffd738;">창작전시</button>
+<div id="myBtnContainer">  
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn cat_btn" onclick="filterSelection('art')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;" > 연행예술</button>
+  <button class="btn cat_btn" onclick="filterSelection('study')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">학술언론</button>
+  <button class="btn cat_btn" onclick="filterSelection('sports')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">레져스포츠</button>
+  <button class="btn cat_btn" onclick="filterSelection('exercise')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">체육</button>
+  <button class="btn cat_btn" onclick="filterSelection('science')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">과학기술</button>
+  <button class="btn cat_btn" onclick="filterSelection('social')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">사회활동종교</button>
+  <button class="btn cat_btn" onclick="filterSelection('creative')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">창작전시</button>
 </div>
 
 <div id="myBtnContainer_mobile" style="justify-content: center; ">
-  <!--<button class="btn active" onclick="filterSelection('all')"> Show all</button>-->
-  <button class="btn" onclick="filterSelection('art')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;" > 연행예술</button>
-  <button class="btn" onclick="filterSelection('study')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">학술언론</button>
-  <button class="btn" onclick="filterSelection('sports')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">레져스포츠</button>
-  <button class="btn" onclick="filterSelection('exercise')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">체육</button>
-  <button class="btn" onclick="filterSelection('science')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">과학기술</button>
-  <button class="btn" onclick="filterSelection('social')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">사회활동종교</button>
-  <button class="btn" onclick="filterSelection('creative')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">창작전시</button>
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn cat_btn" onclick="filterSelection('art')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;" > 연행예술</button>
+  <button class="btn cat_btn" onclick="filterSelection('study')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">학술언론</button>
+  <button class="btn cat_btn" onclick="filterSelection('sports')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">레져스포츠</button>
+  <button class="btn cat_btn" onclick="filterSelection('exercise')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">체육</button>
+  <button class="btn cat_btn" onclick="filterSelection('science')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">과학기술</button>
+  <button class="btn cat_btn" onclick="filterSelection('social')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">사회활동종교</button>
+  <button class="btn cat_btn" onclick="filterSelection('creative')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">창작전시</button>
 </div>
 
 
 <!-- The filterable elements. -->
 <div class="container">
     <!--<div class="inner_container">-->
-   <% @clubs.each do |club| %> 
-  <% if @categories.find(club.category_id).name == "학술언론" %>
+ <% @clubs.each do |club| %> 
+  <% if @categories.find(club.category_id).name =="학술언론" %>
      <div class="filterDiv study" style=" cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div>
   <% elsif @categories.find(club.category_id).name =="연행예술" %>
      <div class="filterDiv art" style=" cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div>

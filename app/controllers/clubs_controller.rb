@@ -38,6 +38,8 @@ class ClubsController < ApplicationController
   # GET /clubs/1.json
   def show
     @category = Category.find(@club.category_id)
+    photos = Photo.where(club_id: @club.id)
+    @photo = photos.where(isMain: 0)
   end
 
   # GET /clubs/new
@@ -193,7 +195,7 @@ class ClubsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def club_params
-      params.require(:club).permit(:name, :short_desc, :detail_desc, :meeting_date, :contact, :room_location, :detail_desc, :isApply, :category_id, :applyMethod)
+      params.require(:club).permit(:name, :short_desc, :detail_desc, :meeting_date, :contact, :room_location, :detail_desc, :isApply, :category_id, :applyMethod, :image_url)
     end
     
     # 모집중 && 메인사진 존재하는　url or club_id를 배열에 담아 반환

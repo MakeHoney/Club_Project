@@ -98,6 +98,11 @@
   padding: 12px 16px;
   background-color: #f1f1f1;
   cursor: pointer;
+  font-family:'Spoqa Han Sans';
+}
+
+.cat_btn{
+  margin-right: .3em; 
 }
 
 /* Add a light grey background on mouse-over */
@@ -159,7 +164,7 @@ input[type='search']{
 //   left margin: 720px;
 // }
 
-@media all and (max-width: 1080px){
+@media all and (max-width: 1024px){
   input[type='search']{
     width: 250px;
 }
@@ -196,7 +201,7 @@ input[type='search']{
   
   #myBtnContainer_mobile{
     display: block;
-    justify-content: center;  // <-- 왜 적용이 안될까 ㅜㅜ
+    justify-content: center;  // <-- 왜 적용이 안될까 ㅜㅜ display block이라서!
     align-item: center;
   }
   
@@ -208,5 +213,162 @@ input[type='search']{
   }
   .btn:hover{
     background-color: orange;
+  }
+}
+
+//about 창 디자인
+  //about question
+.about_question_container{
+  margin-bottom: 100px;
+}
+
+.about_title{
+  display: block;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.about_containers{
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-self: center;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.about_image{
+  width: 200px;
+  height: 200px;
+  margin-top: 50px;
+  border-radius: 100px;
+  vertical-align: middle;
+}
+
+.container_head{
+  font-size: 30px;
+  line-height: 1.1em;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.container_1, .container_2, .container_3{
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin-left: 25px;
+  margin-right: 25px;
+  text-align: center;
+}
+
+.container_head, .container_content{
+  margin: 0 auto;
+}
+
+.about_lion:link{
+  color: rgb(255, 165, 0);
+}
+
+.about_lion:hover{
+  color: blue;
+}
+
+.report{
+  margin: 16px auto;
+}
+
+.underline{
+  border-bottom: 5px solid orange;
+}
+
+.dot{
+  border-top: 23.5px dotted orange;
+}
+
+
+ //about made
+.about_made_container{
+  margin-top: 100px;
+  background-color: #fff;
+  padding-top: 50px;
+} 
+
+.about_title_2{
+  display: block;
+  font-size: 50px;
+  text-align: center;
+}
+
+.made_people{
+  display: inline-grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(5, 100px);
+  align-self: center;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.ajoulion{
+  grid-row-start: 1;
+  grid-row-end: 5;
+  grid-column-start: 1;
+}
+
+.made_people{
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.grid_9{
+  grid-column-start: 2;
+}
+.grid_10{
+  grid-column-start: 3;
+}
+
+// .made_image{
+//   width: 200px;
+//   height: 200px;
+//   border-radius: 100px;
+//   vertical-align: middle;
+//   border: 5px solid skyblue;
+// }
+
+// .made_name{
+//   font-size: 30px;
+// }
+
+// .about_made{
+//   display: block;
+//   justify-content: center;
+//   align-items: center;
+//   margin-left: 15px;
+//   margin-right: 15px;
+//   text-align: center;
+// }
+
+// .made_name, .made_content{
+//   margin: 0 auto;
+// }
+
+// .fab{
+//   color: skyblue;
+// }
+
+@media all and (max-width: 1080px){
+  .about_question_container, .about_made_container, .about_containers, .made_containers{
+    display: block;
+  }
+  .about_question_container{
+    margin-bottom: 0px;
+  }
+  .container_1, .container_2, .container_3, .about_made{
+    margin-bottom: 20px;
+  }
+  .about_title, .about_title_2{
+    font-size: 30px;
+  }
+  .made_info{
+    margin: 0px;
   }
 }

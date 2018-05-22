@@ -166,6 +166,9 @@ a,p {
     color: #fff;
     padding: 20px 10px 20px 10px;
 }
+li{
+  background-color: #072E5D;
+}
 .nav-menu-inner li a:hover{
     transition: all .3s;
     color: #ffd738;
@@ -178,6 +181,26 @@ a,p {
     display: none;
 }
 
+ /*class="club-name"*/
+.club-name{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'GyeonggiBatang','Spoqa Han Sans', sans-serif;
+    font-size: 1.6em;
+    font-weight: 400;
+    
+}
+
+.club-short_desc{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'GyeonggiBatang','Spoqa Han Sans', sans-serif;
+    font-size: 0.9em;
+    font-weight: 100;
+
+}
 @media (max-width: 1024px){
     .nav-menu{
         top: 64px;
@@ -239,6 +262,7 @@ a,p {
     .nav-menu-mobile.active > span:before{
         transform: rotate(90deg);
     }
+    
 }
 /* Navbar End*/
 
@@ -268,6 +292,9 @@ a,p {
     background: none;
     color: #ffd738;
     transition: all .3s;
+}
+.facebook_icon:hover{
+    color: #ffd738;
 }
 
 .linkto-aulikelion{
@@ -310,7 +337,11 @@ a,p {
 
 .card {
     display: flex !important;
-    justify-content: center !important;
+    justify-content: space-around !important;
+    background-color: #f3f3f0 !important;
+    /*border: none !important;*/
+    
+
 }
 
 
@@ -403,4 +434,29 @@ a,p {
   color: #072E5D;
 }
 
+
+.card-title{
+    color:#072E5D;
+}
+
+.sec1{
+    margin-top:70px;
+    margin-left:10%;
+    margin-right:10%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.sec1-img{
+    width: 50%;
+}
+
+.sec1-detail_desc{
+    width: 50%;
+}
+
+.back-to-main{
+    margin-right: 10%;
+}
 
