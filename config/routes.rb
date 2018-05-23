@@ -14,7 +14,8 @@ Rails.application.routes.draw do
   get :search
   end
   end
-
+  
+  get '/showall' => 'clubs#showall'
   
   devise_for :users, controllers:{
     sessions: "users/sessions",

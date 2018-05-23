@@ -1,0 +1,9 @@
+<br><br><br><br><br>
+<div class= "admin_edit">
+<h3>관리자 전체 동아리 편집페이지 입니다.</h3><br>
+<% @clubs.each do |club|%>
+<%= club.name %>
+<%= link_to "편집", edit_club_path(club.id) %>
+<br><br>
+<% end %>
+</div>

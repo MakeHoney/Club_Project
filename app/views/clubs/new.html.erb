@@ -1,4 +1,41 @@
-<h1>New Club</h1>
+<style>
+  .newclub-title{
+    font-family: 'GyeonggiBatang', 'Spoqa Han Sans', sans-serif;
+    font-style: italic;
+    color: '#072E5D';
+  }
+
+  .field{
+    display: flex;
+    margin-bottom: 100px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'GyeonggiBatang', 'Spoqa Han Sans', sans-serif;
+  }
+  
+  .label{
+    display: block;
+    width: 200px;
+    height: 100px;
+    margin: 10px;
+    font-family: 'GyeonggiBatang', 'Spoqa Han Sans', sans-serif;
+
+  }
+
+  .text_area{
+    display: block;
+  }
+  
+  .text_field{
+    display: block;
+  }
+  
+  .number_field{
+    
+  }
+</style>
+
+<h1 class="newclub-title" align="center"><br><br>New Club</h1>
 
 <script>
 var vacancy = new Array();
@@ -100,51 +137,61 @@ function assignId(nextIdNumber, btnId){
 
   <div class="field">
     <%= f.label :name %>
+    <br>
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
     <%= f.label :short_desc %>
+    <br>
     <%= f.text_area :short_desc %>
   </div>
 
   <div class="field">
     <%= f.label :detail_desc %>
+    <br>
     <%= f.text_area :detail_desc %>
   </div>
 
   <div class="field">
     <%= f.label :meeting_date %>
+    <br>
     <%= f.text_area :meeting_date %>
   </div>
 
   <div class="field">
     <%= f.label :contact %>
+    <br>
     <%= f.text_field :contact %>
   </div>
 
   <div class="field">
     <%= f.label :room_location %>
+    <br>
     <%= f.text_field :room_location %>
   </div>
 
   <div class="field">
     <%= f.label :detail_desc %>
+    <br>
     <%= f.text_area :detail_desc %>
   </div>
 
   <div class="field">
     <%= f.label :isApply %>
+    <br>
     <%= f.number_field :isApply %>
   </div>
 
   <div class="field">
     <%= f.label :category_id %>
+    <br>
     <%= f.text_field :category_id %>
   </div>
   
   <div class="field">
     <%= f.label :applyMethod %>
+    <br>
     <%= f.text_field :applyMethod %>
   </div>
   
@@ -172,9 +219,9 @@ function assignId(nextIdNumber, btnId){
 <input id="hashText" type="text" placeholder="#HashTag" onKeyDown="addHashTag(event);">
 
 <!-- Hashtag Container Start -->
-<div id="hashTagContainer"> </div>
+<div id="hashTagContainer" align="center"> </div>
 <!-- Hashtag Container End -->
 
 <br/>
 
-<%= link_to 'Back', clubs_path %>
+<p class="back-to-main" align="right"><%= link_to 'Back', clubs_path %></p>

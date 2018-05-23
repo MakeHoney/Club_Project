@@ -75,17 +75,6 @@
     overflow: hidden;
 }
 
-.filterDiv {
-    float: left;
-    background-color: #FFE796;
-    color: black;
-    width: 100px;
-    line-height: 100px;
-    text-align: center;
-    margin: 2px;
-    display: none; /* Hidden by default */
-}
-
 /* The "show" class is added to the filtered elements */
 .show {
     display: block;
@@ -372,3 +361,23 @@ input[type='search']{
     margin: 0px;
   }
 }
+
+.item {
+      float: left;
+      background-color: #FFE796;
+      color: black;
+      width: 31.3%;
+      line-height: 100px;
+
+
+      text-align: center;
+      margin: 1%;
+      overflow: hidden;
+      display: block;
+      line-height: 200px;
+}
+
+@media all and (max-width: 768px){
+  .item { width: 48%; }
+}
+

@@ -175,50 +175,56 @@
 
 <!-- Category -->
 <!-- Control buttons -->
-<div id="myBtnContainer">  
-  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn cat_btn" onclick="filterSelection('art')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;" > 연행예술</button>
-  <button class="btn cat_btn" onclick="filterSelection('study')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">학술언론</button>
-  <button class="btn cat_btn" onclick="filterSelection('sports')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">레져스포츠</button>
-  <button class="btn cat_btn" onclick="filterSelection('exercise')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">체육</button>
-  <button class="btn cat_btn" onclick="filterSelection('science')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">과학기술</button>
-  <button class="btn cat_btn" onclick="filterSelection('social')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">사회활동종교</button>
-  <button class="btn cat_btn" onclick="filterSelection('creative')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">창작전시</button>
+
+<!--아래 코드 셀렉터 isotope에서 사용하는 셀렉터 형식으로 바꿔 놓았어요 혹시 이부분 수정하시면 말씀해주세요 셀렉터바뀌면 카드뷰가 동작을 안해요!-->
+
+<div id="myBtnContainer">
+  <ul class="menu">
+    <li data-fileter="*" class="btn active" onclick="filterSelection('all')"> Show all</li>
+    <li data-filter=".art" class="btn cat_btn" onclick="filterSelection('art')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;" >연행예술</li>
+    <li data-filter=".study" class="btn cat_btn" onclick="filterSelection('study')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">학술언론</li>
+    <li data-filter=".sports" class="btn cat_btn" onclick="filterSelection('sports')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">레져스포츠</li>
+    <li data-filter=".exercise"class="btn cat_btn" onclick="filterSelection('exercise')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">체육</li>
+    <li data-filter=".science" class="btn cat_btn" onclick="filterSelection('science')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">과학기술</li>
+    <li data-filter=".social" class="btn cat_btn" onclick="filterSelection('social')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">사회활동종교</li>
+    <li data-filter=".creative" class="btn cat_btn" onclick="filterSelection('creative')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">창작전시</li>
+  </ul>
 </div>
 
 <div id="myBtnContainer_mobile" style="justify-content: center; ">
-  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn cat_btn" onclick="filterSelection('art')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;" > 연행예술</button>
-  <button class="btn cat_btn" onclick="filterSelection('study')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">학술언론</button>
-  <button class="btn cat_btn" onclick="filterSelection('sports')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">레져스포츠</button>
-  <button class="btn cat_btn" onclick="filterSelection('exercise')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">체육</button>
-  <button class="btn cat_btn" onclick="filterSelection('science')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">과학기술</button>
-  <button class="btn cat_btn" onclick="filterSelection('social')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">사회활동종교</button>
-  <button class="btn cat_btn" onclick="filterSelection('creative')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">창작전시</button>
+  <ul class="menu">
+    <li data-fileter="*" class="btn active" onclick="filterSelection('all')"> Show all</li>
+    <li data-filter=".art" class="btn cat_btn" onclick="filterSelection('art')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;" >연행예술</li>
+    <li data-filter=".study" class="btn cat_btn" onclick="filterSelection('study')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">학술언론</li>
+    <li data-filter=".sports" class="btn cat_btn" onclick="filterSelection('sports')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">레져스포츠</li>
+    <li data-filter=".exercise"class="btn cat_btn" onclick="filterSelection('exercise')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">체육</li>
+    <li data-filter=".science" class="btn cat_btn" onclick="filterSelection('science')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">과학기술</li>
+    <li data-filter=".social" class="btn cat_btn" onclick="filterSelection('social')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">사회활동종교</li>
+    <li data-filter=".creative" class="btn cat_btn" onclick="filterSelection('creative')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">창작전시</li>
+  </ul>
 </div>
 
-
-<!-- The filterable elements. -->
 <div class="container">
-    <!--<div class="inner_container">-->
- <% @clubs.each do |club| %> 
-  <% if @categories.find(club.category_id).name =="학술언론" %>
-     <div class="filterDiv study" style=" cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div>
-  <% elsif @categories.find(club.category_id).name =="연행예술" %>
-     <div class="filterDiv art" style=" cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div>
-   <% elsif @categories.find(club.category_id).name == "레져스포츠" %>
-     <div class="filterDiv sports" style=" cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div>
-   <% elsif @categories.find(club.category_id).name == "체육" %>
-     <div class="filterDiv exercise" style=" cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div>
-   <% elsif @categories.find(club.category_id).name == "과학기술" %>
-     <div class="filterDiv science" style=" cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div>
-   <% elsif @categories.find(club.category_id).name == "사회활동종교" %>
-     <div class="filterDiv social" style=" cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div>
-   <% else %>
-   <div class="filterDiv creative" style=" cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div> 
-   <% end %>
-   <% end %>
-   <!--</div>-->
+  <div class="items-wrapper">
+    <% @clubs.each do |club| %>
+      <% if @categories.find(club.category_id).name == "연행예술" %>
+          <div class="item art" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div>
+      <% elsif @categories.find(club.category_id).name == "학술언론" %>
+          <div class="item study" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div>
+      <% elsif @categories.find(club.category_id).name == "레져스포츠" %>
+          <div class="item sports" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div>
+      <% elsif @categories.find(club.category_id).name == "체육" %>
+          <div class="item exercise" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div>
+      <% elsif @categories.find(club.category_id).name == "과학기술" %>
+          <div class="item science" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div>
+      <% elsif @categories.find(club.category_id).name == "사회활동종교" %>
+          <div class="item social" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div>
+      <% else %>
+          <div class="item creative" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
-<br>
+
+
 

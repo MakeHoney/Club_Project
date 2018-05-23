@@ -41,6 +41,8 @@ class ClubsController < ApplicationController
     photos = Photo.where(club_id: @club.id)
     @photo = photos.where(isMain: 0)
   end
+  
+
 
   # GET /clubs/new
   def new
@@ -64,9 +66,13 @@ class ClubsController < ApplicationController
     @numOfHashTag = @existHashtags.length;
    # < ----------------- hash tag end ----------------- >
   end
-
+  
   # POST /clubs
   # POST /clubs.json
+  def showall
+   @clubs = Club.all
+  end
+  
   def create
     @club = Club.new(club_params)
 
@@ -227,4 +233,6 @@ class ClubsController < ApplicationController
 
     return retVal;
   end
+  
+
 end

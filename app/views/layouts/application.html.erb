@@ -48,18 +48,18 @@
           <li>
             <!--navbar 상세페이지 동아리 이름-->
           <% if user_signed_in? %>
-          <li><%=current_user.name%></li>
+          <li class="club-name"><%=current_user.name%></li>
           <li><%= link_to "로그아웃", destroy_user_session_path, method: :delete, :class => "hvr-underline-reveal" %></li>
-          <% if current_user.id < 59 %>
-          <li><%= link_to '동아리편집', edit_club_path(current_user.id), :class => "hvr-underline-reveal" %></li>
-          <% end %>
+           <% if current_user.id < 59 %>
+           <li><%= link_to '동아리편집', edit_club_path(current_user.id), :class => "hvr-underline-reveal" %></li>
+           <% end %>
           <% else %>
           <li><%= link_to "로그인", new_user_session_path, :class => "hvr-underline-reveal" %></li>
           <li><%= link_to '동아리편집', clubs_path, :class => "hvr-underline-reveal" %></li>
           <% end %>
           
           <% if can? :new, @clubs %>  
-          <li><%= link_to '동아리편집', clubs_path, :class => "hvr-underline-reveal" %></li>
+          <li><%= link_to '동아리편집', "/showall" , :class => "hvr-underline-reveal" %></li>
           <li><%= link_to '동아리등록', new_club_path, :class => "hvr-underline-reveal" %></li>
           <% end %>
           </li>
