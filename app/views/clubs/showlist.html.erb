@@ -1,0 +1,12 @@
+<br><br><br><br><br>
+<div class= "admin_edit">
+  <h3>전체 동아리 관리페이지 입니다.</h3><br>
+  <div>
+    <% @clubs.each do |club|%>
+    <p class = "admin_edit_name"><%= club.name %></p>
+    <%= link_to "편집", edit_club_path(club.id) %> &nbsp;
+    <%= link_to '삭제', club, method: :delete, data: { confirm: '정말 삭제하시겠어요?' } %>
+    <br><br>
+    <% end %>
+  </div>
+</div>

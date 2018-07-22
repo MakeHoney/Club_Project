@@ -1,73 +1,6 @@
-
-@media all and (min-width: 1081px){
-  
-#mobile-only{
-  display: none;
-}
-
-.carousel-inner .carousel-item.active,
-.carousel-inner .carousel-item-next,
-.carousel-inner .carousel-item-prev {
-  display: flex;
-}
-
-.carousel-inner .carousel-item-right.active,
-.carousel-inner .carousel-item-next {
-  transform: translateX(25%);
-}
-
-.carousel-inner .carousel-item-left.active, 
-.carousel-inner .carousel-item-prev {
-  transform: translateX(-25%);
-}
-  
-.carousel-inner .carousel-item-right,
-.carousel-inner .carousel-item-left{ 
-  transform: translateX(0);
-}
-}
-
-@media all and (max-width: 1080px){
-  
-#desktop-only{
-  display: none;
-}  
-  
-.carousel-inner .carousel-item.active,
-.carousel-inner .carousel-item-next,
-.carousel-inner .carousel-item-prev {
-  display: flex;
-}
-
-.carousel-inner .carousel-item-right.active,
-.carousel-inner .carousel-item-next {
-  transform: translateX(100%);
-}
-
-.carousel-inner .carousel-item-left.active, 
-.carousel-inner .carousel-item-prev {
-  transform: translateX(-100%);
-}
-  
-.carousel-inner .carousel-item-right,
-.carousel-inner .carousel-item-left{ 
-  transform: translateX(0);
-}
-}
-
-
-.p_button{
-  cursor: pointer;
-  border-radius: 25px;
-  color: #fff;
-  border: 1px solid #fff;
-  background-color: transparent;
-}
-
-.p_button:hover{
-  color: #000000;
-  background-color: #fff;
-  transition: 300ms ease all;
+.main-top-container{
+  background: #1f538d;
+  padding-top: 64px;
 }
 
 
@@ -82,133 +15,177 @@
 
 /* Style the buttons */
 .btn {
+  cursor: pointer;
+  color: #fff !important;
+  font-weight: 700 !important;
   border: none;
+  border-radius: 2px 2px 0 0 !important;
+  padding: 12px 20px 6px 20px !important;
   outline: none;
-  padding: 12px 16px;
-  background-color: #f1f1f1;
+  background-color: transparent;
   cursor: pointer;
   font-family:'Spoqa Han Sans';
 }
-
-.cat_btn{
-  margin-right: .3em; 
+.menu{
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  font-weight: 700 !important;
 }
-
+.menu li{
+  box-sizing: border-box;
+}
 /* Add a light grey background on mouse-over */
 .btn:hover {
-  background-color: #ddd;
+  background: #ffd838!important;
+  color: #1f538d !important;
+  transform: all .5s;
+  box-shadow: 0 -2px 1px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px !important;
 }
 
 /* Add a dark background to the active button */
 .btn.active {
-  background-color: #666;
-  color: white;
-}
-.row{
-  margin: 4em 0 2em 0;
-}
-
-// 검색창 디자인
-
-.search{
-
-  display:flex;
-  align-item: center;
-  justify-content: center;
+  background-color: #dadada !important;
+  color: #1f538d !important;
+  transform: all .5s;
+  box-shadow: 0 -2px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
-.club_search{
-  margin-bottom: 2em;
-}
 
-.has_search{  
-  margin-bottom: 2em;
-  display:flex;
-  align-item: center;
-  justify-content: center;
-}
-
-input[type='search']{
-  font-size: 16px;
-  width: 325px;
-  padding: 10px;
-  border: 0px;
-  outline: none;
-  float: left;
-  
-}
-
-.bu_search{
-  width: 80px;
-  height: 100%;
-  border: 0px;
-  background: #ffd738;
-  outline: none;
-  color: #ffffff;
-  float: right;
-  cursor: pointer;
-}
-
-// .hashtag_image{
-//   left margin: 720px;
-// }
-
-@media all and (max-width: 1024px){
-  input[type='search']{
-    width: 250px;
-}
-}
-
-// 카테고리 분류 부분 시작
-@media all and (min-width: 1081px){
-#myBtnContainer_mobile{
-  display: none;
-}  
-  
-.btn{
-  border: 1px solid black;
-  color: darkblue;
-  background-color: transparent;
-  // padding: 28px 56px; 부트스트랩때문에 적용안됨
-  // font-size: 150%;부트스트랩때문에 적용안됨
-  cursor: pointer;
-  // border-color: #ffd738;부트스트랩때문에 적용안됨
-}
 
 #myBtnContainer{
   display:flex;
   justify-content: center;
   align-item: center;
+  padding-top: 45px;
+}
+#myBtnContainer_mobile{
+  display: none;
+}
+// .hashtag_image{
+//   left margin: 720px;
+// }
+
+
+
+// 카테고리 분류 부분 시작
+@media all and (max-width: 768px){
+  input[type='search']{
+    width: 250px !important;
 }
 }
 
-
-@media all and (max-width: 1080px){
+@media all and (max-width: 768px){
+  #myBtnContainer_mobile{
+    display: flex;
+  }
   #myBtnContainer{
     display: none;
   }
   
-  #myBtnContainer_mobile{
-    display: block;
-    justify-content: center;  // <-- 왜 적용이 안될까 ㅜㅜ display block이라서!
-    align-item: center;
+  .menu{
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 5px;
+    width: 100%;
+    margin: 40px 10px;
   }
   
+  .fst-row, .snd-row{
+    display: flex;
+    flex-direction: row;
+  }
+  .fst-row li{
+    width: 33.3%;
+  }
+  .snd-row li{
+    width: 33.3%;
+  }
   .btn{
-    margin: 3px 1px 3px 1px;
-    color: darkblue;
-    background-color: transparent;
-    border: 1px solid black;
+    font-size: 0.8rem !important;
+    color: #1f538d !important;
   }
-  .btn:hover{
-    background-color: orange;
+  .btn.active {
+    background-color: #ffd838 !important;
+    color: #1f538d !important;
+    font-weight: 800;
+    border-radius: 5px !important;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.35);
   }
+  .btn.whole{
+    border-top: solid rgba(0,0,0,0.35) .5px;
+  }
+
+  
 }
+
+
+
+
+
+
+// 검색창 디자인
+
+.search{
+  display:flex;
+  justify-content: center;
+}
+
+.club_search{
+  background: #fff;
+  overflow: hidden;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.hash_search{  
+  display:flex;
+  justify-content: center;
+}
+
+.mainHashtag {
+  background-color: transparent;
+  display: inline-grid;
+  cursor: pointer;
+  font-family: GyeonggiBatang;
+  font-weight: bold;
+}
+
+input[type='search']{
+  font-size: 16px;
+  width: 400px;
+  padding: 10px 0 10px 0;
+  border: 0px;
+  outline: none;
+  float: left;
+  border-radius:  0 3px 3px 0;
+}
+
+button[type="submit"]{
+  background-color: #fff;
+}
+
+.bu_search{
+  width: 44px;
+  height: 100%;
+  border: 0px;
+  outline: none;
+  color: #495057;
+  float: right;
+  cursor: pointer;
+  border-radius: 3px 0 0 3px;
+}
+
+
 
 //about 창 디자인
   //about question
 .about_question_container{
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .about_title{
@@ -231,7 +208,6 @@ input[type='search']{
   height: 200px;
   margin-top: 50px;
   border-radius: 100px;
-  vertical-align: middle;
 }
 
 .container_head{
@@ -254,11 +230,11 @@ input[type='search']{
   margin: 0 auto;
 }
 
-.about_lion:link{
+.about-lion:link{
   color: rgb(255, 165, 0);
 }
 
-.about_lion:hover{
+.about-lion:hover{
   color: blue;
 }
 
@@ -277,7 +253,7 @@ input[type='search']{
 
  //about made
 .about_made_container{
-  margin-top: 100px;
+  margin-top: 25px;
   background-color: #fff;
   padding-top: 50px;
 } 
@@ -295,12 +271,18 @@ input[type='search']{
   align-self: center;
   margin-left: 150px;
   margin-right: 150px;
+  margin-top: 0px;
 }
 
 .ajoulion{
   grid-row-start: 1;
   grid-row-end: 5;
   grid-column-start: 1;
+}
+
+.ajoulion_img{
+  width: 473px;
+  height: 497px;
 }
 
 .made_people{
@@ -314,42 +296,38 @@ input[type='search']{
 .grid_10{
   grid-column-start: 3;
 }
+.grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10{
+  margin: auto;
+}
 
-// .made_image{
-//   width: 200px;
-//   height: 200px;
-//   border-radius: 100px;
-//   vertical-align: middle;
-//   border: 5px solid skyblue;
-// }
+.made_info{
+  margin-bottom: 0px;
+}
 
-// .made_name{
-//   font-size: 30px;
-// }
+@media all and (min-width: 768px) and (max-width: 1118px){
+  .about_containers{
+    margin-left: 45px;
+    margin-right: 45px;
+  }
+}
 
-// .about_made{
-//   display: block;
-//   justify-content: center;
-//   align-items: center;
-//   margin-left: 15px;
-//   margin-right: 15px;
-//   text-align: center;
-// }
-
-// .made_name, .made_content{
-//   margin: 0 auto;
-// }
-
-// .fab{
-//   color: skyblue;
-// }
-
-@media all and (max-width: 1080px){
-  .about_question_container, .about_made_container, .about_containers, .made_containers{
-    display: block;
+@media all and (max-width: 768px){
+  .about_question_container, .made_containers, .about_containers, .about_made_container {
+    display: flex;
+    flex-direction: column;
+  }
+  .about_containers{
+    margin-left: 30px;
+    margin-right: 30px;
   }
   .about_question_container{
     margin-bottom: 0px;
+  }
+  .about_made_container{
+    background-image: url("/assets/ajoulion_mobile.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 300px;
   }
   .container_1, .container_2, .container_3, .about_made{
     margin-bottom: 20px;
@@ -357,27 +335,313 @@ input[type='search']{
   .about_title, .about_title_2{
     font-size: 30px;
   }
-  .made_info{
-    margin: 0px;
+  
+ .made_people{
+    display: inline-grid;
+    grid-template-rows: repeat(6,1fr);
+    grid-template-columns: repeat(2,1fr);
+    margin-left: 40px;    
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  .ajoulion{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: none;
+  }
+
+  .grid_9{
+    grid-column-start: 1;
+  }
+  .grid_10{
+    grid-column-start: 2;
   }
 }
 
-.item {
-      float: left;
-      background-color: #FFE796;
-      color: black;
-      width: 31.3%;
-      line-height: 100px;
 
 
-      text-align: center;
-      margin: 1%;
-      overflow: hidden;
-      display: block;
-      line-height: 200px;
+///main page card
+.item{
+  padding-bottom: 35px;
+}
+.club-img-div {
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-position: center !important;
+    height: 200px;
+}
+.card-img-top-default {
+    width: 100%;
+    opacity: 0;//기본 이미지로 학교 로고 보여주고 사진 넣으면 로고 무시하고 보여줄수 있게 opacity 1로 바꿀예정
 }
 
-@media all and (max-width: 768px){
-  .item { width: 48%; }
+.card-block {
+    display: inline-block;
+    width: 100%;
+    height: 230px;
+    background: white;
+    color: white;
 }
 
+.card-title {
+    height: 3em;
+    font-size: 1.3em;
+    color: #777777;
+    vertical-align: text-top;
+    text-align: center;
+}
+.card-text-p {
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+.card-text {
+    margin: 0 8px 0 8px;
+    font-weight: 400;
+    font-size: 1.1em;
+    color: #e57373;
+   
+}
+
+.club-info-wrapper{
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.15);
+  background: #fff;
+}
+
+.cards-container{
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.item:hover{
+  transition: all .3s ease;
+  transform: scale(1.03);
+}
+
+@media (max-width: 575px){
+  .item.col-12{
+  padding-right: 35px !important;
+  padding-left: 35px !important;
+}
+}
+
+
+
+
+///test
+
+.wrap {
+  display: block;
+  width: auto;
+  height: auto;
+  box-sizing: border-box;
+}
+.material-wrap{
+  padding-top: 60px;
+  padding-bottom: 30px;
+}
+
+.material-card {
+  margin: auto;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  width: 300px;
+  height: auto;
+  box-sizing: border-box;
+  background: #fff;
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
+.material-card:hover {
+  box-shadow: 0 6px 13px 0 rgba(0, 0, 0, 0.2), 0 8px 18px 0 rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+.material-card:active {
+  box-shadow: 0 12px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+}
+.material-card:first-child {
+  border-radius: 4.5px;
+}
+.material-card:last-child {
+  border-radius: 4.5px;
+}
+.material-card.triggered {
+  margin: auto;
+  border-radius: 4.5px;
+  z-index: 2;
+  box-shadow: 0 15px 25px 0 rgba(0, 0, 0, 0.2), 0 20px 35px 0 rgba(0, 0, 0, 0.2);
+}
+.material-card.triggered .material-card-info{
+  visibility: hidden;
+}
+.material-card.triggered .material-card-content {
+  max-height: 950px;
+  padding-top: 10px;
+  visibility: visible;
+  overflow: initial;
+  opacity: 1;
+}
+.material-card.triggered .material-card-content .material-card-content-img {
+  opacity: 1;
+}
+.material-header {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  outline: 1px solid black;
+  background: #1f538d;
+  display: flex;
+  flex-direction: row;
+}
+
+.material-card.triggered .material-header {
+  background: #dadada;
+}
+
+.material-card-title {
+  font-size: 1.3em;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  
+}
+.material-card.triggered .material-card-title {
+  color: #1f538d;
+}
+
+
+* {
+  outline: none !important;
+}
+
+.material-card-action {
+  display: block;
+  position: relative;
+  width: 35px;
+  height: 100%;
+  float: right;
+  color: #ffd838;
+  outline: 1px solid black;
+}
+.material-card-action a {
+  font-size: 24px;
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+.material-card-action a i {
+  text-shadow: rgba(0,0,0,0.5) 2px 2px;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transition: all 0.2s ease-in-out;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.material-card-action.triggered a{
+  color: #6d6d6d;
+}
+.material-card-action.triggered a i {
+  text-shadow: none;
+  -webkit-transform: translate(-50%, -50%) rotate(-135deg);
+          transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.material-card-content {
+  height: 200px;
+  overflow: scroll !important;
+  display: block;
+  position: relative;
+  max-height: 0px;
+  padding: 0 10px;
+  margin: 0 0 0 0;
+  box-sizing: border-box;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1), overflow 0s linear;
+}
+
+.material-card-club{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 50px;
+  border-top: solid rgba(0,0,0,0.4) 0.3px;
+  padding-top: 6px;
+}
+
+.material-card-club .hashtag-block{
+  font-size: 0.9em;
+  padding: 3px;
+  background: #ffc107;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.material-card-club .date-block{
+  font-size: 0.9em;
+  padding: 3px;
+  background: #dc3545;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.admin_edit{
+  display: inline-block;
+  margin-left: 30%;
+}
+.admin_edit_name{
+  margin-right: 10%;
+  font-size: 1.3em;
+}
+
+///메인 해쉬태그
+.mainHashtag{
+  padding: 3px;
+  color: #fff;
+}
+.mainHashtag:hover{
+  color: #ffd838;
+}
+
+.mainhashtag-container{
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@media (max-width: 330px){
+  .mainHashtag:nth-child(even){
+    display: none;
+  }
+}
+@media (min-width: 331px) and (max-width: 420px){
+  .mainHashtag:nth-child(5){
+    display: none;
+  }
+}
+
+
+#myBtn{
+  display: none;
+  position: fixed;
+  bottom: 5vh;
+  right: 3vw;
+  z-index: 99;
+  cursor: pointer;
+  background: rgba(0,0,0,0.75);
+  height: 40px;
+  width: 40px;
+  border-radius: 30px;
+}

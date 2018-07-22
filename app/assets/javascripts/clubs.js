@@ -1,41 +1,18 @@
 /* global $ */
+
 $(document).ready(function () {
-        multiCarousel();
         isot();
     });
 
-function multiCarousel() {
-  // Instantiate the Bootstrap carousel
-  $('#recipeCarousel').carousel({
-    interval: 5000
-  })
-
-  $('.carousel .carousel-item').each(function(){
-      var next = $(this).next();
-      if (!next.length) {
-      next = $(this).siblings(':first');
-      }
-      next.children(':first-child').clone().appendTo($(this));
-
-      for (var i=0;i<5;i++) {
-          next=next.next();
-          if (!next.length) {
-             next = $(this).siblings(':first');
-          }
-
-          next.children(':first-child').clone().appendTo($(this));
-      }
-  });
-};
 
 
 function isot() {
   $('.items-wrapper').isotope({
     itemSelector: '.item',
-    filter: "*"
+    filter: ".all"
   });
 
-  $('.menu li').click(function(){
+  $('.mainhashtag-container li').click(function(){
     var selector = $(this).attr('data-filter');
 
     $('.items-wrapper').isotope({
@@ -43,10 +20,11 @@ function isot() {
     })
 
     //changing active class with click event
-    $('.menu li.active').removeClass('active');
+    $('.mainhashtag-container li.active').removeClass('active');
     $(this).addClass('active');
   });
 }
+
 
 
 
@@ -97,5 +75,4 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active";
   });
 }
-
 

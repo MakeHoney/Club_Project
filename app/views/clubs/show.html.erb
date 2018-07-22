@@ -1,31 +1,22 @@
-<!--<p id="notice"><%= notice %></p>-->
+ <a href="#" title=Top>
+  <div id="myBtn" onclick="topFunction()"><div><i class="fa fa-arrow-up" aria-hidden="true"></i></div></div>
+</a>
 
-<!--<p>-->
-<!--  <strong>Name:</strong>-->
-<!--  <%= @club.name %>-->
-<!--</p>-->
-
-<!--<p>-->
-<!--  <strong>Short desc:</strong>-->
-<!--  <%= @club.short_desc %>-->
-<!--</p>-->
-
-  
-
+<div class = "show_ent">
   <div class="sec1">
   <!--이미지 삽입-->
     <center class="sec1-img">
       <% @photo.each do |photo|%>
-        <img src="<%= photo.url %>" width="500"/>
+        <img src="<%= photo.url %>" width="70%" height = "90%"/>
       <% end %>
     </center>
   <!--자리 잡아놓기 위해서 임의의 이미지 삽입했습니다-->
     <!--<center class="sec1-img"><img src="http://www.visualdive.com/wp-content/uploads/2017/12/5-4.jpg" width="500"></center>-->
    
-    <p class="sec1-detail_desc">
-    <strong>Detail desc:</strong>
-    <%= @club.detail_desc %>
-    </p>
+    <div class="sec1-detail_desc">
+      <p class = "detail_title"><strong> 저희는 이런 동아리입니다</strong></p>
+      <%= @club.detail_desc %>
+    </div>
 
   </div>
   
@@ -33,28 +24,28 @@
 
 <!-- 화이팅하이소~~~~ -->
 <div class="row justify-content-center" align="center">
-  <div class="card col-auto" style="width: 18rem;">
+  <div class="card col-auto" style="width: 16rem;">
     <div class="card-body">
       <h5 class="card-title">Meeting date</h5>
       <p class="card-text"><%= @club.meeting_date %> </p>
     </div>
   </div>
   
-  <div class="card col-auto" style="width: 18rem;">
+  <div class="card col-auto" style="width: 16rem;">
     <div class="card-body">
       <h5 class="card-title">Contact</h5>
       <p class="card-text"><%= @club.contact %></p>
     </div>
   </div>
   
-  <div class="card col-auto" style="width: 18rem;">
+  <div class="card col-auto" style="width: 16rem;">
     <div class="card-body">
       <h5 class="card-title">Room location</h5>
       <p class="card-text"><%= @club.room_location%></p>
     </div>
   </div>
   
-  <div class="card col-auto" style="width: 18rem;">
+  <div class="card col-auto" style="width: 16rem;">
     <div class="card-body">
       <h5 class="card-title">Isapply</h5>
       <p class="card-text">
@@ -74,52 +65,23 @@
 </div>
 
 <!--hashtag-->
-<p align="center">
-  <strong> hashtag : 
-    <% @club.hashtags.each do |tuple| %>
-      <%= link_to tuple['hashtag'], hashtag_path(:id => tuple['id']) %>   &nbsp;
+<div class = "show_ali">
+  <div>
+      <p class= "show_font_hash"> # hashtag  </p>
+        <% @club.hashtags.each do |tuple| %>
+          <%= link_to tuple['hashtag'], hashtag_path(:id => tuple['id']) %>   &nbsp;
+        <% end %>
+  </div>
+</div>
+<div class = "show_but">
+    <!--관리자이거나, 해당하는 동아리만 편집 할 수 있도록 설정-->
+    <% if user_signed_in? && current_user.author == 1%>
+    <p><%= link_to ' 동아리 편집하기', edit_club_path(@club), :class => "show_font" %></p>
+    <% elsif user_signed_in? && current_user.author == 2 && current_user.id == @club.id %>
+    <p><%= link_to ' 내 동아리 편집하기', edit_club_path(@club) ,:class => "show_font" %></p>
     <% end %>
-  </strong>
-</p>
-<!--hashtag-->
+    <p><%= link_to '돌아가기', clubs_path ,:class => "show_font" %></p>
+</div>
 
+</div>
 
-
-<!--<p>-->
-<!--  <strong>Meeting date:</strong>-->
-<!--  <%= @club.meeting_date %>-->
-<!--</p>-->
-
-<!--<p>-->
-<!--  <strong>Contact:</strong>-->
-<!--  <%= @club.contact %>-->
-<!--</p>-->
-
-<!--<p>-->
-<!--  <strong>Room location:</strong>-->
-<!--  <%= @club.room_location %>-->
-<!--</p>-->
-
-<!--<p>-->
-<!--  <strong>Detail desc:</strong>-->
-<!--  <%= @club.detail_desc %>-->
-<!--</p>-->
-
-<!--<p>-->
-<!--  <strong>Isapply:</strong>-->
-<!--  <%= @club.isApply %>-->
-<!--</p>-->
-
-<!--<p>-->
-<!--  <strong>Category</strong>-->
-<!--  <%= @category.name%>-->
-<!--</p>-->
-
-<!--관리자이거나, 해당하는 동아리만 편집 할 수 있도록 설정-->
-
-<% if user_signed_in? && current_user.author == 1%>
-<p><%= link_to ' 동아리 편집하기', edit_club_path(@club) %></p>
-<% elsif user_signed_in? && current_user.author == 2 && current_user.id == @club.id %>
-<p><%= link_to ' 내 동아리 편집하기', edit_club_path(@club) %></p>
-<% end %>
-<p class="back-to-main" align="right"><%= link_to '돌아가기', clubs_path %></p>

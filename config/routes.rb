@@ -2,11 +2,17 @@ Rails.application.routes.draw do
  
   get 'hashtags/show'
   resources :hashtags
-  resources :clubs  
+  resources :clubs do
+    collection do
+      get :showlist
+    end
+  end
+  
   root 'clubs#index'
   
   get '/clubs/show'=>'clubs#show'
   get '/about' => 'clubs#about'
+  # get '/showall' => 'clubs#showall'
  
   get 'clubs/search' => 'clubs#search'
   resources :clubs do
@@ -14,8 +20,7 @@ Rails.application.routes.draw do
   get :search
   end
   end
-  
-  get '/showall' => 'clubs#showall'
+
   
   devise_for :users, controllers:{
     sessions: "users/sessions",

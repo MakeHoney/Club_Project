@@ -15,6 +15,9 @@ class ClubsController < ApplicationController
     @imageUrls = imageAdvertise('urls');
     @imageIds = imageAdvertise('ids');
     
+    #검색창에 모집중인 동아리 전달
+    @applying = Club.where(:isApply => [1,2])
+    
     @q = Club.ransack(params[:q])
     @clubs = @q.result(distinct: true)
     
@@ -69,7 +72,7 @@ class ClubsController < ApplicationController
   
   # POST /clubs
   # POST /clubs.json
-  def showall
+  def showlist
    @clubs = Club.all
   end
   

@@ -1,120 +1,52 @@
-<p id="notice"><%= notice %></p>
 
+<div class="main-top-container">
 
-
-  <!-- The slideshow -->
-<div id="desktop-only">
-<div class="container text-center my-3">
-  <div class="row mx-auto my-auto" >
-    <div id="recipeCarousel" class="carousel slide w-100 row" data-ride="carousel">
-      <div class="carousel-inner w-100" role="listbox">
-      <% (@imageUrls.length).times do |i| %>
-        <% if i==0 %>
-        <div class="carousel-item active ">
-          
-         <img class="d-block col-3 img-fluid" src="<%= @imageUrls[0] %>" style="width: 277px; height: 346px; padding: 5px;" />
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 180px; z-index: 100; " >상세보기</button>
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i+1] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 455px; z-index: 100; ">상세보기</button>
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i+2] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 730px; z-index: 100; " >상세보기</button>
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i+3] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 1005px; z-index: 100; " >상세보기</button>
-        </div>
-        <% else %>
-        <div class="carousel-item " >
-         <img class="d-block col-3 img-fluid" src="<%= @imageUrls[i] %>" style="width: 277px; height: 346px; padding: 5px;" />
-         <% if @imageIds[i]==nil %>
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i-(@imageIds.length+1)] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 180px; z-index: 100; " >상세보기</button>
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i-(@imageIds.length)] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 455px; z-index: 100; " >상세보기</button>         
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i-(@imageIds.length-1)] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 730px; z-index: 100; " >상세보기</button>
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i-(@imageIds.length-2)] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 1005px; z-index: 100; " >상세보기</button> 
-         <% elsif @imageIds[i+1]==nil %>
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 180px; z-index: 100; " >상세보기</button>
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i-(@imageIds.length+1)] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 455px; z-index: 100; " >상세보기</button>         
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i-(@imageIds.length)] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 730px; z-index: 100; " >상세보기</button>
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i-(@imageIds.length-1)] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 1005px; z-index: 100; " >상세보기</button> 
-         <% elsif @imageIds[i+2]== nil %>
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 180px; z-index: 100; " >상세보기</button>
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i+1] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 455px; z-index: 100; " >상세보기</button>         
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i-(@imageIds.length+1)] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 730px; z-index: 100; " >상세보기</button>
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i-(@imageIds.length)] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 1005px; z-index: 100; " >상세보기</button>
-         <% elsif @imageIds[i+3]== nil %>
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 180px; z-index: 100; " >상세보기</button>
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i+1] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 455px; z-index: 100; " >상세보기</button>         
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i+2] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 730px; z-index: 100; " >상세보기</button>
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i-(@imageIds.length+1)] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 1005px; z-index: 100; " >상세보기</button> 
-         <% else %>
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 180px; z-index: 100; " >상세보기</button>
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i+1] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 455px; z-index: 100; ">상세보기</button>
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i+2] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 730px; z-index: 100; " >상세보기</button>
-           <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i+3] %>'" style="width: 80px; height: 40px; position: absolute; top: 295px; left: 1005px; z-index: 100; " >상세보기</button>
-         <% end %>
-        </div>
-        <% end %>
-      <% end %>
-        <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev" style="height: 230px; margin-top: 59px;" >
-          <span class="carousel-control-prev-icon" aria-hidden="true" style="width: 35px; height: 35px;"></span>
-          <span class="sr-only">Previous</span>
+<div class="container">
+<div class="wrap material-wrap">
+  <div class="material-card">
+    <div class="material-header">
+      <div class="material-card-title">
+        현재, <%= @applying.length %>개의 동아리가
+        <br>
+        여러분을 기다리고 있습니다.
+      </div>
+      <div class="material-card-action">
+        <a href="#">
+          <i class="fa fa-plus" aria-hidden="true"></i>
         </a>
-        <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next" style="height: 230px; margin-top: 59px;" >
-          <span class="carousel-control-next-icon" aria-hidden="true" style="width: 35px; height: 35px;"></span>
-          <span class="sr-only">Next</span>
-        </a>
+      </div>
     </div>
+
+     <div class="material-card-content">
+       <% @applying.each do |club| %>
+       <div class= "material-card-club">
+         <div class="card-club-name"><%= club.name %></div>
+         <div class="card-club-hashtag"><span class="hashtag-block">#요리</span></div>
+         <div class="card-club-D-day"><span class="date-block">3월마감</span></div>
+       </div>
+       <% end %>
+    </div>
+  
   </div>
 </div>
 </div>
-</div>
-
-<div id="mobile-only">
-<div class="container">
-    <div class="row" style="justify-content: center; ">
-        <div class="col-md-4 offset-md-4" style="width: 325px;">
-
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner" role="listbox">
-      <% (@imageUrls.length).times do |i| %>
-        <% if i==0 %>
-        <div class="carousel-item active ">   
-         <img  class="d-block img-fluid" src="<%= @imageUrls[0] %>" style=" width: 300px; height: 400px; padding: 5px;" />
-         <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[0] %>'" style="width: 90px; height: 40px; position: absolute; top: 340px; left: 185px; z-index: 100; " >상세보기</button>
-        </div>
-        <% else %>
-        <div class="carousel-item" >
-         <img  class="d-block img-fluid" src="<%= @imageUrls[i] %>" style=" width: 300px; height: 400px; padding: 5px;" />
-          <button class="p_button" type="button" onclick="location.href='/clubs/<%= @imageIds[i] %>'" style="width: 90px; height: 40px; position: absolute; top: 345px; left: 185px; z-index: 100; " >상세보기</button>
-        </div>
-        <% end %> 
-        <% end %>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="height: 230px; margin-top: 71px;">
-            <span class="carousel-control-prev-icon" aria-hidden="true" style="width: 35px; height: 35px;"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="height: 230px; margin-top: 71px;">
-            <span class="carousel-control-next-icon" aria-hidden="true" style="width: 35px; height: 35px;"></span>
-            <span class="sr-only">Next</span>
-        </a>
-        </div>
-
-        </div>
-    </div>
-</div>
-</div>
-</div>
-
-
-
-
 <!--검색 기능 창-->
 <div class="search"> 
-        <%= search_form_for @q  do | f | %>
-        <%= f.search_field :name_cont_any  ,placeholder: '동아리 이름을 입력해주세요!!' %>
-        <%=f.submit :class => 'bu_search' %> 
-        <%end%>
- <!--hashtag-->
-</div>
-<div class="has_search">
-    <% @randHashtags.each_with_index do |randHashtag, i| %>
-        <%= link_to randHashtag, hashtag_path(:id => @hashIds[i]) %>   &nbsp;
+  <%= search_form_for @q  do | f | %>
+    <%= f.button :submit, :class => 'bu_search' do%>
+       <i class="fa fa-search"></i>
     <% end %>
+    <%= f.search_field :name_cont_any  ,placeholder: '동아리 이름을 입력해주세요!!' %>
+  <%end%>
+</div>
+ <!--hashtag-->
+
+<div class="hash_search">
+    <ul class="mainhashtag-container">
+    <% @randHashtags.each_with_index do |randHashtag, i| %>
+        <li class="mainHashtag hvr-grow" data-filter=".<%=randHashtag.gsub(/#/, '')%>"><%=randHashtag%></li>
+    <% end %>
+    </ul>
 </div>
 
 
@@ -179,49 +111,226 @@
 <!--아래 코드 셀렉터 isotope에서 사용하는 셀렉터 형식으로 바꿔 놓았어요 혹시 이부분 수정하시면 말씀해주세요 셀렉터바뀌면 카드뷰가 동작을 안해요!-->
 
 <div id="myBtnContainer">
-  <ul class="menu">
-    <li data-fileter="*" class="btn active" onclick="filterSelection('all')"> Show all</li>
-    <li data-filter=".art" class="btn cat_btn" onclick="filterSelection('art')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;" >연행예술</li>
-    <li data-filter=".study" class="btn cat_btn" onclick="filterSelection('study')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">학술언론</li>
-    <li data-filter=".sports" class="btn cat_btn" onclick="filterSelection('sports')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">레져스포츠</li>
-    <li data-filter=".exercise"class="btn cat_btn" onclick="filterSelection('exercise')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">체육</li>
-    <li data-filter=".science" class="btn cat_btn" onclick="filterSelection('science')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">과학기술</li>
-    <li data-filter=".social" class="btn cat_btn" onclick="filterSelection('social')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">사회활동종교</li>
-    <li data-filter=".creative" class="btn cat_btn" onclick="filterSelection('creative')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">창작전시</li>
+  <ul class="mainhashtag-container">
+    <li data-filter=".all" class="btn active" > 전체 보기 </li>
+    <li data-filter=".art" class="btn cat_btn">연행예술</li>
+    <li data-filter=".study" class="btn cat_btn">학술언론</li>
+    <li data-filter=".sports" class="btn cat_btn">레져스포츠</li>
+    <li data-filter=".exercise"class="btn cat_btn">체육</li>
+    <li data-filter=".science" class="btn cat_btn">과학기술</li>
+    <li data-filter=".social" class="btn cat_btn">사회활동종교</li>
+    <li data-filter=".creative" class="btn cat_btn">창작전시</li>
   </ul>
 </div>
 
-<div id="myBtnContainer_mobile" style="justify-content: center; ">
-  <ul class="menu">
-    <li data-fileter="*" class="btn active" onclick="filterSelection('all')"> Show all</li>
-    <li data-filter=".art" class="btn cat_btn" onclick="filterSelection('art')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;" >연행예술</li>
-    <li data-filter=".study" class="btn cat_btn" onclick="filterSelection('study')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">학술언론</li>
-    <li data-filter=".sports" class="btn cat_btn" onclick="filterSelection('sports')" style="padding: 14px 15px; font-size: 100%; border-color: #ffd738;">레져스포츠</li>
-    <li data-filter=".exercise"class="btn cat_btn" onclick="filterSelection('exercise')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">체육</li>
-    <li data-filter=".science" class="btn cat_btn" onclick="filterSelection('science')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">과학기술</li>
-    <li data-filter=".social" class="btn cat_btn" onclick="filterSelection('social')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">사회활동종교</li>
-    <li data-filter=".creative" class="btn cat_btn" onclick="filterSelection('creative')" style="padding: 20px 30px; font-size: 100%; border-color: #ffd738;">창작전시</li>
+<!--.js -> Div 삭제-->
+
+
+<div id="myBtnContainer_mobile">
+  <ul class="mainhashtag-container">
+    <ul class="fst-row">
+      <li data-filter=".art" class="btn cat_btn" >연행예술</li>
+      <li data-filter=".study" class="btn cat_btn">학술언론</li>
+      <li data-filter=".sports" class="btn cat_btn">레져스포츠</li>
+    </ul>
+    <ul class="snd-row">
+      <li data-filter=".exercise"class="btn cat_btn">체육</li>
+      <li data-filter=".science" class="btn cat_btn">과학기술</li>
+      <li data-filter=".social" class="btn cat_btn">사회활동종교</li>
+    </ul>
+    <li data-fileter="*" class="btn active whole"> 전체 보기 </li>
+
   </ul>
 </div>
+</div>
 
-<div class="container">
-  <div class="items-wrapper">
+<div class="container cards-container">
+  <div class="row items-wrapper">
     <% @clubs.each do |club| %>
       <% if @categories.find(club.category_id).name == "연행예술" %>
-          <div class="item art" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div>
+          <div class="item art col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';">
+            <div class="club-info-wrapper">
+              <div class="club-img-div" style="background:url(/assets/logo.png);">
+                  <img class="card-img-top-default" alt="logo">
+                  <!--src=사진 기존 크기에 맞게 창이 조절됨-->
+              </div>
+              <div class="card-block">
+                  <div class="card-title"> <%= club.name %></div>   
+                  <span class="card-text-p card-text">해시테그 표시위치</span></br>
+                  <span class="card-text-p card-text"><%= club.short_desc %></span>
+              </div>
+              </div>
+              <!--clubs_hashtags.hashtag-->
+          </div>
       <% elsif @categories.find(club.category_id).name == "학술언론" %>
-          <div class="item study" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div>
+      <div>
+          <div class="item study col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';">
+            <div class="club-info-wrapper">
+              <div class="club-img-div" style="background:url(/assets/logo.png);">
+                  <img class="card-img-top-default" alt="logo" >
+              </div>
+              <div class="card-block">
+                  <p class="card-title">
+                      <span><%= club.name %></span>
+                  </p>
+                  <p class="card-text-p">
+                      <span class="card-text">
+                          해시테그 표시위치
+                      </span>
+                  </p>
+              </div>
+            </div>
+        </div>
+        </div>
       <% elsif @categories.find(club.category_id).name == "레져스포츠" %>
-          <div class="item sports" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div>
+                <div>
+          <div class="item sports col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';">
+            <div class="club-info-wrapper">  
+              <div class="club-img-div" style="background:url(/assets/logo.png);">
+                  <img class="card-img-top-default" alt="logo" >
+              </div>
+              <div class="card-block">
+                  <p class="card-title">
+                      <span><%= club.name %></span>
+                  </p>
+                  <p class="card-text-p">
+                      <span class="card-text">
+                          해시테그 표시위치
+                      </span>
+                  </p>
+              </div>
+            </div>
+        </div>
+        </div>
       <% elsif @categories.find(club.category_id).name == "체육" %>
-          <div class="item exercise" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div>
+                 <div>
+          <div class="item exercise col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';">
+            <div class="club-info-wrapper">  
+              <div class="club-img-div" style="background:url(/assets/logo.png);">
+                  <img class="card-img-top-default" alt="logo" >
+              </div>
+              <div class="card-block">
+                  <p class="card-title">
+                      <span><%= club.name %></span>
+                  </p>
+                  <p class="card-text-p">
+                      <span class="card-text">
+                          해시테그 표시위치
+                      </span>
+                  </p>
+              </div>
+            </div>
+        </div>
+        </div>
       <% elsif @categories.find(club.category_id).name == "과학기술" %>
-          <div class="item science" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div>
+                 <div>
+          <div class="item science col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';">
+            <div class="club-info-wrapper">  
+              <div class="club-img-div" style="background:url(/assets/logo.png);">
+                  <img class="card-img-top-default" alt="logo" >
+              </div>
+              <div class="card-block">
+                  <p class="card-title">
+                      <span><%= club.name %></span>
+                  </p>
+                  <p class="card-text-p">
+                      <span class="card-text">
+                          해시테그 표시위치
+                      </span>
+                  </p>
+              </div>
+            </div>
+        </div>
+        </div>
       <% elsif @categories.find(club.category_id).name == "사회활동종교" %>
-          <div class="item social" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div>
+                 <div>
+          <div class="item social col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';">
+            <div class="club-info-wrapper"> 
+              <div class="club-img-div" style="background:url(/assets/logo.png);">
+                  <img class="card-img-top-default" alt="logo" >
+              </div>
+              <div class="card-block">
+                  <p class="card-title">
+                      <span><%= club.name %></span>
+                  </p>
+                  <p class="card-text-p">
+                      <span class="card-text">
+                          해시테그 표시위치
+                      </span>
+                  </p>
+              </div>
+            </div>
+        </div>
+        </div>
       <% else %>
-          <div class="item creative" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';"><%= club.name %></div>
+        <div>
+          <div class="item creative col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';">
+            <div class="club-info-wrapper">  
+              <div class="club-img-div" style="background:url(/assets/logo.png);">
+                  <img class="card-img-top-default" alt="logo" >
+              </div>
+              <div class="card-block">
+                  <p class="card-title">
+                      <span><%= club.name %></span>
+                  </p>
+                  <p class="card-text-p">
+                      <span class="card-text">
+                          해시테그 표시위치
+                      </span>
+                  </p>
+              </div>
+            </div>
+        </div>
+        </div>
       <% end %>
+      
+        <div>
+            <div class="item all col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';">
+              <div class="club-info-wrapper">
+                <div class="club-img-div" style="background:url(/assets/logo.png);">
+                    <img class="card-img-top-default" alt="logo" >
+                </div>
+                <div class="card-block">
+                    <p class="card-title">
+                        <span><%= club.name %></span>
+                    </p>
+                    <p class="card-text-p">
+                        <span class="card-text">
+                            해시테그 표시위치
+                        </span>
+                    </p>
+                </div>
+              </div>
+          </div>
+        </div>
+
+        <% Club.find(club.id).hashtag_ids.each do |hashtag_id| %>
+            <% @randHashtags.each do |randHashtag| %>
+              <% if Hashtag.find(hashtag_id).hashtag == randHashtag %>
+                <div>
+                    <div class="item <%=randHashtag.gsub(/#/, '')%> col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12" style="cursor: pointer;" onclick="location.href='/clubs/<%=club.id %>';">
+                      <div class="club-info-wrapper">
+                        <div class="club-img-div" style="background:url(/assets/logo.png);">
+                            <img class="card-img-top-default" alt="logo" >
+                        </div>
+                        <div class="card-block">
+                            <p class="card-title">
+                                <span><%= club.name %></span>
+                            </p>
+                            <p class="card-text-p">
+                                <span class="card-text">
+                                     <%= randHashtag %>
+                                </span>
+                            </p>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                
+              <% end %>
+            <% end %>
+        <% end %>
+
     <% end %>
   </div>
 </div>

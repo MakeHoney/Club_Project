@@ -61,8 +61,10 @@
     <%= f.text_field :applyMethod %>
   </div>
   
-    <%= f.file_field :image_url %><br />
-
+  <div class="field">
+    <%= f.file_field :image_url %>
+  </div>
+  
     <ul>
       <%= f.fields_for :hashtags do |hashtag| %>
         <li>

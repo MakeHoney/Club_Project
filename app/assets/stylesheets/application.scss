@@ -26,6 +26,7 @@
     font-weight: normal; 
     font-style: normal; 
 }
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 /* Font Justification End*/
 
 
@@ -104,9 +105,10 @@ body a:visited{
 
 
 /* Basic Font Justification */
-a,p {
+a,p, div, li {
     font-family: 'GyeonggiBatang','Spoqa Han Sans', sans-serif;
 }
+
 
 .logo{
     height: 40px;
@@ -119,7 +121,11 @@ a,p {
 /* Body section for sticky footer */
 #main-section{
     flex: 1 0 auto;
-    min-height: 200vh;
+    min-height: 100vh;
+    background: #dadada;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 /* Body section for sticky footer End */
 
@@ -134,8 +140,8 @@ a,p {
     text-align: center;
     top: 0px;
     z-index: 1000;
-    background-color:#072E5D;
-    color: #fff;
+    background: #1f538d;
+    color: #1b1e21;
     width: 100%;
     transition: all .3s;
 }
@@ -144,10 +150,15 @@ a,p {
     position: fixed;
     margin-top: 0 !important;
 }
+.header.header-fixed a{
+   color: #fff;
+}
+.header.header-fixed.active a{
+   color: #072e5d;
+}
 .header.header-below{
-    background-color: #072E5D;
+    background-color: #1f538d;
     transition: all .3s;
-	box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
 .header-inner{
@@ -166,9 +177,6 @@ a,p {
     color: #fff;
     padding: 20px 10px 20px 10px;
 }
-li{
-  background-color: #072E5D;
-}
 .nav-menu-inner li a:hover{
     transition: all .3s;
     color: #ffd738;
@@ -183,26 +191,17 @@ li{
 
  /*class="club-name"*/
 .club-name{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'GyeonggiBatang','Spoqa Han Sans', sans-serif;
-    font-size: 1.6em;
-    font-weight: 400;
-    
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    margin: auto 0;
+    text-shadow: rgba(0,0,0,0.5) 2px 2px;
 }
 
-.club-short_desc{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'GyeonggiBatang','Spoqa Han Sans', sans-serif;
-    font-size: 0.9em;
-    font-weight: 100;
-
-}
-@media (max-width: 1024px){
+@media (max-width: 765px){
     .nav-menu{
+        width: 100%;
         top: 64px;
         right: 0;
         position: absolute;
@@ -252,6 +251,9 @@ li{
     }
     .nav-menu.active{
         height: 300%;
+        background: rgba(0,0,0,0.5);
+        width: 100%;
+
     }
     .nav-menu-mobile.active{
         transform: rotate(45deg);
@@ -269,7 +271,7 @@ li{
 
 /* Footer */
 #footer{
-    background-color: #072E5D;
+    background-color: #495057;
     flex-shrink: 0;
 }
 .copyright{
@@ -344,13 +346,6 @@ li{
 
 }
 
-
-/* test */
-/*임시용*/
-#main-section{
-    background: #f3f3f0;
-    overflow: hidden;
-}
 
 /*로그인 화면*/
 .simple_form{
@@ -437,6 +432,8 @@ li{
 
 .card-title{
     color:#072E5D;
+    font-size: 1.4em;
+    font-weight: 900;
 }
 
 .sec1{
