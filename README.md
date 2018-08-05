@@ -1,24 +1,14 @@
+# 아주대학교 동아리 웹서비스
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+> 아주대학교 교내 동아리를 소개해주는 웹서비스입니다.
+>
+> 2018-2학기 서비스 예정인, 현재 개발 중인 프로젝트입니다.
 
 
-Welcome to your Rails project on Cloud9 IDE!
 
-To get started, just do the following:
+- by 멋쟁이사자처럼 at 아주대학교
 
-1. Run the project with the "Run Project" button in the menu bar on top of the IDE.
-2. Preview your new app by clicking on the URL that appears in the Run panel below (https://HOSTNAME/).
-
-Happy coding!
-The Cloud9 IDE team
+![screenshot from 2018-08-06 06-38-30](https://user-images.githubusercontent.com/31656287/43690340-669642b8-9943-11e8-8eb0-8753a3bddf35.png)
 
 
-## Support & Documentation
 
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
