@@ -8,7 +8,8 @@
 
 - by 멋쟁이사자처럼 at 아주대학교
 
-![screenshot from 2018-08-06 06-38-30](https://user-images.githubusercontent.com/31656287/43690340-669642b8-9943-11e8-8eb0-8753a3bddf35.png)
+
+![screenshot from 2018-08-06 06-43-59](https://user-images.githubusercontent.com/31656287/43690398-23b38932-9944-11e8-9624-ddb19ab22d6c.png)
 
 
 
